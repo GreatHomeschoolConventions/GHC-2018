@@ -1,0 +1,29 @@
+{
+  "name": "ghc-2018",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GreatHomeschoolConventions/ghc-2018.git"
+  },
+  "author": "AndrewRMinion Design",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/GreatHomeschoolConventions/ghc-2018/issues"
+  },
+  "homepage": "https://github.com/GreatHomeschoolConventions/ghc-2018#readme",
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "cssnano": "^3.10.0",
+    "grunt": "^1.0.1",
+    "grunt-browser-sync": "^2.2.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.8.0",
+    "pixrem": "^4.0.1"
+  }
+}

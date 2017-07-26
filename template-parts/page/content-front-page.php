@@ -9,6 +9,20 @@
  */
 
 ?>
+<section class="tagline">
+    <article class="educate">
+        <h2>Educate</h2>
+        <p>Respected speakers <strong>educate</strong> you for the houmeschool journey.</p>
+    </article>
+    <article class="encourage">
+        <h2>Encourage</h2>
+        <p>Grace-filled families <strong>encourage</strong> you to continue.</p>
+    </article>
+    <article class="educate">
+        <h2>Equip</h2>
+        <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
+    </article>
+</section>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
     <?php if ( has_post_thumbnail() ) :

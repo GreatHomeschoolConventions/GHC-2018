@@ -18,7 +18,7 @@
         <h2>Encourage</h2>
         <p>Grace-filled families <strong>encourage</strong> you to continue.</p>
     </article>
-    <article class="educate">
+    <article class="equip">
         <h2>Equip</h2>
         <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
     </article>

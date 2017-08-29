@@ -23,6 +23,9 @@
         <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
     </article>
 </section>
+<section class="locations-map">
+    <?php include( get_stylesheet_directory() . '/img/US-map.svg' ); ?>
+</section>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
     <?php if ( has_post_thumbnail() ) :

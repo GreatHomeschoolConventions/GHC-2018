@@ -1,3 +1,10 @@
+$theme-blue:            #00456a;
+$theme-yellow:          #fec429;
+$theme-green:           #aac016;
+$theme-orange:          #f05033;
+$theme-magenta:         #b12278;
+$theme-teal:            #0c7f84;
+
 $header-font-family:    "League Gothic", "league_gothicregular", "Helvetica Neue", Arial, sans-serif;
 $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
 
@@ -716,6 +723,66 @@ input[type="submit"].secondary:focus {
 /*--------------------------------------------------------------
 7.0 Formatting
 --------------------------------------------------------------*/
+
+.theme-blue, .theme.se {
+    color: $theme-blue;
+
+    &.bg {
+        background-color: $theme-blue;
+
+        &, * { color: white; }
+    }
+}
+
+.theme-yellow, .theme.tx {
+    color: $theme-yellow;
+
+    &.bg {
+        background-color: $theme-yellow;
+
+        &, * { color: $theme-blue; }
+    }
+}
+
+.theme-green, .theme.mw {
+    color: $theme-green;
+
+    &.bg {
+        background-color: $theme-green;
+
+        &, * { color: white; }
+    }
+}
+
+.theme-orange, .theme.ca {
+    color: $theme-orange;
+
+    &.bg {
+        background-color: $theme-orange;
+
+        &, * { color: white; }
+    }
+}
+
+.theme-magenta, .theme.mo {
+    color: $theme-magenta;
+
+    &.bg {
+        background-color: $theme-magenta;
+
+        &, * { color: white; }
+    }
+}
+
+.theme-teal {
+    color: $theme-teal;
+
+    &.bg {
+        background-color: $theme-teal;
+
+        &, * { color: white; }
+    }
+}
 
 hr {
     background-color: #bbb;

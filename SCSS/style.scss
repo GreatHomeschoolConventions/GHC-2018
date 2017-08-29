@@ -1498,21 +1498,13 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 
 .panel-image:before {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+100&0+0,0.3+100 */ /* FF3.6-15 */
-    background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.3)));
-    background: -webkit-linear-gradient(to top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00000000", endColorstr="#4d000000", GradientType=0); /* IE6-9 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 100%);
     bottom: 0;
     content: "";
     left: 0;
     right: 0;
     position: absolute;
     top: 100px;
-}
-
-.twentyseventeen-front-page article:not(.has-post-thumbnail):not(:first-child) {
-    border-top: 1px solid #ddd;
 }
 
 .panel-content {
@@ -1522,6 +1514,59 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .panel-content .wrap {
     padding-bottom: 0.5em;
     padding-top: 1.75em;
+}
+
+.tagline {
+    display: flex;
+    flex-wrap: wrap;
+
+    @media screen and (min-width: 768px) {
+        article:not(.fun) { width: 33.333%; }
+    }
+
+    article {
+        width: 100%;
+        border: none;
+        padding: 2em;
+        text-align: center;
+
+        &, * { color: white; }
+    }
+
+    .educate { background-color: $theme-blue; }
+    .encourage { background-color: $theme-green; }
+    .equip { background-color: $theme-orange; }
+    .fun { background-color: $theme-teal; }
+}
+
+.locations-map {
+    padding: 1em 0;
+
+    svg {
+        display: block;
+        width: 90%;
+        max-width: 900px;
+        height: auto;
+        margin: 0 auto 1em;
+    }
+
+    .mobile-bars {
+        @media screen and (min-width: 768px) { display: none; }
+
+        h2 {
+            margin: 0;
+            padding: 0;
+        }
+
+        a {
+            display: block;
+            width: 100%;
+            padding: 1em;
+            text-align: center;
+            font-weight: 700;
+            font-family: $header-font-family;
+        }
+    }
 }
 
 /* Panel edit link */

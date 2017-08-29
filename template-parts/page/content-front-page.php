@@ -22,9 +22,19 @@
         <h2>Equip</h2>
         <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
     </article>
+    <article class="fun">
+        <h2>Fun!!!</h2>
+    </article>
 </section>
 <section class="locations-map">
     <?php include( get_stylesheet_directory() . '/img/US-map.svg' ); ?>
+    <section class="mobile-bars">
+        <h2 class="se theme bg"><a href="/locations/southeast/">Southeast</a></h2>
+        <h2 class="tx theme bg"><a href="/locations/texas/">Texas</a></h2>
+        <h2 class="mw theme bg"><a href="/locations/midwest/">Midwest</a></h2>
+        <h2 class="ca theme bg"><a href="/locations/california/">California</a></h2>
+        <h2 class="mo theme bg"><a href="/locations/missouri/">Missouri</a></h2>
+    </section>
 </section>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 

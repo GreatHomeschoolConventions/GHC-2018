@@ -1287,7 +1287,7 @@ body {
     font-size: 1.5rem;
     font-weight: 800;
     line-height: 1.25;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.03em;
     margin: 0;
     padding: 0;
     text-transform: uppercase;
@@ -1304,6 +1304,7 @@ body.has-header-video .site-title,
 body.has-header-image .site-title a,
 body.has-header-video .site-title a {
     color: #fff;
+    text-shadow: 0 0 5px rgba(black, 0.8);
 }
 
 .site-description {
@@ -1317,6 +1318,7 @@ body.has-header-image .site-description,
 body.has-header-video .site-description {
     color: #fff;
     opacity: 0.8;
+    text-shadow: 0 0 5px rgba(black, 0.8);
 }
 
 .custom-logo-link {
@@ -1427,6 +1429,20 @@ body:not(.title-tagline-hidden) .site-branding-text {
     border-color: rgba(255, 255, 255, 0.8);
     background-color: rgba(34, 34, 34, 0.8);
     color: #fff;
+}
+
+#wp-custom-header {
+    position: relative;
+    padding-bottom: 60%;
+    height: 0;
+
+    iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
 }
 
 .admin-bar .wp-custom-header-video-button {
@@ -3209,7 +3225,7 @@ img.size-200x-1[src*="svg"] {
 
     .site-title {
         font-size: 36px;
-        font-size: 2.25rem;
+        font-size: 2.75rem;
     }
 
     .site-description {

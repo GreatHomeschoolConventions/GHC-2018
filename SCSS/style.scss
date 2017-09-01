@@ -422,35 +422,32 @@ h6:first-child {
 }
 
 h1 {
-    font-size: 24px;
     font-size: 2.5rem;
     font-weight: 300;
 }
 
 h2 {
     color: #666;
-    font-size: 20px;
     font-size: 2.25rem;
     font-weight: 300;
+
+    + h3 { padding-top: 0; }
 }
 
 h3 {
     color: $body-text-color;
-    font-size: 18px;
     font-size: 1.875rem;
     font-weight: 300;
 }
 
 h4 {
     color: $body-text-color;
-    font-size: 16px;
     font-size: 1.75rem;
     font-weight: 800;
 }
 
 h5 {
     color: #767676;
-    font-size: 13px;
     font-size: 1.5rem;
     font-weight: 800;
     letter-spacing: 0.15em;
@@ -459,7 +456,6 @@ h5 {
 
 h6 {
     color: $body-text-color;
-    font-size: 15px;
     font-size: 1.5rem;
     font-weight: 800;
 }
@@ -2877,44 +2873,36 @@ img.size-200x-1[src*="svg"] {
     input,
     select,
     textarea {
-        font-size: 18px;
         font-size: 1.125rem;
     }
 
     h1 {
-        font-size: 30px;
-        font-size: 3rem;
+        font-size: 2.5rem;
     }
 
     h2,
     .page .panel-content .recent-posts .entry-title {
-        font-size: 26px;
-        font-size: 2.75rem;
-    }
-
-    h3 {
-        font-size: 22px;
-        font-size: 2.5rem;
-    }
-
-    h4 {
-        font-size: 18px;
         font-size: 2.25rem;
     }
 
+    h3 {
+        font-size: 2.0rem;
+    }
+
+    h4 {
+        font-size: 1.75rem;
+    }
+
     h5 {
-        font-size: 13px;
         font-size: 2rem;
     }
 
     h6 {
-        font-size: 16px;
         font-size: 1.75rem;
     }
 
     .entry-content blockquote.alignleft,
     .entry-content blockquote.alignright {
-        font-size: 14px;
         font-size: 0.875rem;
     }
 
@@ -3446,9 +3434,7 @@ img.size-200x-1[src*="svg"] {
         padding: 5.5em 0 0;
     }
 
-    .single-post .entry-title,
-    .page .entry-title {
-        font-size: 26px;
+    .single-post .entry-title {
         font-size: 1.625rem;
     }
 

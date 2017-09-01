@@ -36,6 +36,9 @@
         <h2 class="mo theme bg"><a href="/locations/missouri/">Missouri</a></h2>
     </section>
 </section>
+<section class="featured-speakers">
+    <?php echo do_shortcode( '[speaker_grid posts_per_page="24" image_only="true" image_size="150, 150"]' ); ?>
+</section>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
 
     <?php if ( has_post_thumbnail() ) :

@@ -4,6 +4,7 @@ $theme-green:           #aac016;
 $theme-orange:          #f05033;
 $theme-magenta:         #b12278;
 $theme-teal:            #0c7f84;
+$theme-gray:            #dddddd;
 
 $header-font-family:    "League Gothic", "league_gothicregular", "Helvetica Neue", Arial, sans-serif;
 $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
@@ -1517,10 +1518,20 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 .tagline {
-    display: flex;
-    flex-wrap: wrap;
+    background: linear-gradient(to right, $theme-blue 0%, $theme-blue 50%, $theme-orange 50%, $theme-orange 100%);
 
-    @media screen and (min-width: 768px) {
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 48em) {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+
+    @media screen and (min-width: 48em) {
         article:not(.fun) { width: 33.333%; }
     }
 
@@ -1544,31 +1555,94 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 }
 
 .locations-map {
-    padding: 1em 0;
-
     svg {
         display: block;
         width: 90%;
         max-width: 900px;
         height: auto;
-        margin: 0 auto 1em;
+        margin: 1em auto;
     }
 
     .mobile-bars {
-        @media screen and (min-width: 768px) { display: none; }
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (min-width: 48em) { display: none; }
 
         h2 {
             margin: 0;
             padding: 0;
+            width: 50%;
+
+            &:last-child { width: 100%; }
         }
 
         a {
             display: block;
             width: 100%;
-            padding: 1em;
+            padding: 0.5em;
             text-align: center;
             font-weight: 700;
             font-family: $header-font-family;
+        }
+    }
+}
+
+.home {
+    .featured-speakers,
+    .sponsors {
+        padding: 2em;
+        text-align: center;
+    }
+
+    .speakers-container,
+    .sponsors-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .featured-speakers {
+        background-color: $theme-blue;
+        text-align: center;
+
+        * { color: white; }
+    }
+
+    .sponsors {
+        background-color: $theme-gray;
+    }
+
+    .speaker,
+    .sponsor {
+        padding: 0 1em 1em;
+        box-sizing: border-box;
+
+        @media screen and (max-width: 30em) { width: 50%; }
+        @media screen and (min-width: 30em) { padding: 0 2em 1em; }
+
+        .post-title {
+            font-family: $body-font-family;
+            font-size: 1em;
+        }
+    }
+
+    .type-page {
+        background-color: $theme-orange;
+        text-align: center;
+
+        .entry-content > * { color: white; }
+
+        .button {
+            background-color: $theme-gray;
+            color: $body-text-color;
+
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $body-text-color;
+                color: $theme-gray;
+            }
         }
     }
 }
@@ -2533,6 +2607,11 @@ object {
 
 .speaker .wp-post-image {
     border-radius: 50%;
+}
+
+img.size-200x-1[src*="svg"] {
+    width: 200px;
+    height: auto;
 }
 
 .wp-caption,

@@ -10,18 +10,20 @@
 
 ?>
 <section class="tagline">
-    <article class="educate">
-        <h2>Educate</h2>
-        <p>Respected speakers <strong>educate</strong> you for the houmeschool journey.</p>
-    </article>
-    <article class="encourage">
-        <h2>Encourage</h2>
-        <p>Grace-filled families <strong>encourage</strong> you to continue.</p>
-    </article>
-    <article class="equip">
-        <h2>Equip</h2>
-        <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
-    </article>
+    <div class="wrap">
+        <article class="educate">
+            <h2>Educate</h2>
+            <p>Respected speakers <strong>educate</strong> you for the houmeschool journey.</p>
+        </article>
+        <article class="encourage">
+            <h2>Encourage</h2>
+            <p>Grace-filled families <strong>encourage</strong> you to continue.</p>
+        </article>
+        <article class="equip">
+            <h2>Equip</h2>
+            <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
+        </article>
+    </div>
     <article class="fun">
         <h2>Fun!!!</h2>
     </article>
@@ -37,36 +39,20 @@
     </section>
 </section>
 <section class="featured-speakers">
-    <?php echo do_shortcode( '[speaker_grid posts_per_page="24" image_only="true" image_size="150, 150"]' ); ?>
+    <div class="wrap">
+        <h2>Featured Speakers</h2>
+        <?php echo do_shortcode( '[speaker_grid posts_per_page="24" show="image, name" image_size="150, 150"]' ); ?>
+    </div>
+</section>
+<section class="sponsors">
+    <div class="wrap">
+        <h2>Sponsors</h2>
+        <?php echo do_shortcode( '[sponsors width="200" gray="true"]' ); ?>
+    </div>
 </section>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'twentyseventeen-panel ' ); ?> >
-
-    <?php if ( has_post_thumbnail() ) :
-        $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'twentyseventeen-featured-image' );
-
-        $post_thumbnail_id = get_post_thumbnail_id( $post->ID );
-
-        $thumbnail_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'twentyseventeen-featured-image' );
-
-        // Calculate aspect ratio: h / w * 100%.
-        $ratio = $thumbnail_attributes[2] / $thumbnail_attributes[1] * 100;
-        ?>
-
-        <div class="panel-image" style="background-image: url(<?php echo esc_url( $thumbnail[0] ); ?>);">
-            <div class="panel-image-prop" style="padding-top: <?php echo esc_attr( $ratio ); ?>%"></div>
-        </div><!-- .panel-image -->
-
-    <?php endif; ?>
-
     <div class="panel-content">
         <div class="wrap">
-            <header class="entry-header">
-                <?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
-
-                <?php twentyseventeen_edit_link( get_the_ID() ); ?>
-
-            </header><!-- .entry-header -->
-
             <div class="entry-content">
                 <?php
                     /* translators: %s: Name of current post */

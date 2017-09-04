@@ -52,10 +52,14 @@
     <div class="entry-content">
         <?php
         /* translators: %s: Name of current post */
-        the_content( sprintf(
-            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-            get_the_title()
-        ) );
+        if ( is_single() ) {
+            the_content( sprintf(
+                __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+                get_the_title()
+            ) );
+        } else {
+            the_excerpt();
+        }
 
         wp_link_pages( array(
             'before'      => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),

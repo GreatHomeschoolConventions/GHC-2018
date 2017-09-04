@@ -1694,6 +1694,13 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     display: inline;
 }
 
+.author-info {
+    background-color: $theme-gray;
+    padding: 2em;
+
+    p:last-child { margin-bottom: 0; }
+}
+
 .pagination,
 .comments-pagination {
     border-top: 1px solid #eee;

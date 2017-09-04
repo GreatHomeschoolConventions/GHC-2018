@@ -1680,6 +1680,8 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
 .pinterest-image {
     float: right;
     margin: 0 0 1em 1em;
+
+    ~ h2 { clear: left; }
 }
 
 .byline,

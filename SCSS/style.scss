@@ -1677,6 +1677,11 @@ body.page:not(.twentyseventeen-front-page) .entry-title {
     color: #767676;
 }
 
+.pinterest-image {
+    float: right;
+    margin: 0 0 1em 1em;
+}
+
 .byline,
 .updated:not(.published) {
     display: none;
@@ -2512,8 +2517,14 @@ object {
     max-width: 100%;
 }
 
-.speaker .wp-post-image {
+.speaker .wp-post-image,
+.wp-user-avatar {
     border-radius: 50%;
+}
+
+.wp-user-avatar {
+    float: left;
+    margin: 0 1em 1em 0;
 }
 
 img.size-200x-1[src*="svg"] {

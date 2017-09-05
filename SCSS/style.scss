@@ -32,6 +32,7 @@ $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-se
    13.4 Posts
    13.5 Pages
    13.6 Footer
+   13.7 Speakers
 14.0 Comments
 15.0 Widgets
 16.0 Media
@@ -2122,6 +2123,46 @@ body:not(.twentyseventeen-front-page) .entry-header {
     visibility: hidden;
     height: 0;
     width: 100%;
+}
+
+/*--------------------------------------------------------------
+13.7 Speakers
+--------------------------------------------------------------*/
+
+.speaker {
+    &-archive {
+        .speakers-container,
+        .special-events-container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .speaker,
+        .special_event {
+            box-sizing: border-box;
+            padding: 1em;
+            margin-bottom: 2em;
+        }
+
+        .speaker {
+            width: 25%;
+
+            @media screen and (max-width: 48em) { width: 50%; }
+            @media screen and (max-width: 30em) { width: 100%; }
+        }
+
+        .special_event {
+            width: 50%;
+
+            @media screen and (max-width: 48em) { width: 100%; }
+        }
+    }
+
+    &-thumbnail a { box-shadow: none; }
+}
+
+.convention {
+    &-link { box-shadow: none; }
 }
 
 /*--------------------------------------------------------------

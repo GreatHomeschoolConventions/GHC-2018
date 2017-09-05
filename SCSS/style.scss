@@ -1528,8 +1528,8 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         text-align: center;
     }
 
-    .speakers-container,
-    .sponsors-container {
+    .speaker-container,
+    .sponsor-container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
@@ -2144,8 +2144,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .speaker {
     &-archive {
-        .speakers-container,
-        .special-events-container {
+        .speaker-container,
+        .special_event-container {
             display: flex;
             flex-wrap: wrap;
         }

@@ -1448,17 +1448,6 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 .tagline {
     background: linear-gradient(to right, $theme-blue 0%, $theme-blue 50%, $theme-orange 50%, $theme-orange 100%);
 
-    .wrap {
-        display: flex;
-        flex-wrap: wrap;
-
-        @media screen and (max-width: 48em) {
-            margin: 0;
-            padding: 0;
-            max-width: 100%;
-        }
-    }
-
     @media screen and (min-width: 48em) {
         article:not(.fun) { width: 33.333%; }
     }
@@ -1482,6 +1471,19 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
     }
 }
 
+.tagline, .locations {
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 48em) {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
+}
+
 .locations-map {
     svg {
         display: block;
@@ -1491,27 +1493,32 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         margin: 1em auto;
     }
 
-    .mobile-bars {
-        display: flex;
-        flex-wrap: wrap;
+    .locations {
+        background: linear-gradient(to right, $theme-blue 0%, $theme-blue 50%, $theme-magenta 50%, $theme-magenta 100%);
 
-        @media screen and (min-width: 48em) { display: none; }
+        @media screen and (min-width: 48em) { margin-bottom: 2em; }
 
-        h2 {
-            margin: 0;
-            padding: 0;
-            width: 50%;
-
-            &:last-child { width: 100%; }
-        }
-
-        a {
-            display: block;
-            width: 100%;
-            padding: 0.5em;
+        .theme {
+            padding: 1em;
+            width: 20%;
             text-align: center;
-            font-weight: 700;
-            font-family: $header-font-family;
+
+            h2, p {
+                padding: 0;
+                margin: 0;
+            }
+
+            .info {
+                font-family: $body-font-family;
+                font-weight: 400;
+                font-size: 0.8rem;
+            }
+
+            @media screen and (max-width: 48em) {
+                width: 50%;
+
+                &:last-child { width: 100%; }
+            }
         }
     }
 }

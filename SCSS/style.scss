@@ -188,6 +188,7 @@ html [type="button"],
     -webkit-appearance: button;
 }
 
+a.button::-moz-focus-inner,
 button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
@@ -196,6 +197,7 @@ button::-moz-focus-inner,
     padding: 0;
 }
 
+a.button:-moz-focusring,
 button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
@@ -627,6 +629,7 @@ input[type="checkbox"] + label {
     font-weight: 400;
 }
 
+a.button,
 button,
 input[type="button"],
 input[type="submit"] {
@@ -644,14 +647,11 @@ input[type="submit"] {
     padding: 1em 2em;
     text-shadow: none;
     transition: background 0.2s;
+
+    input + & { padding: 0.75em 2em; }
 }
 
-input + button,
-input + input[type="button"],
-input + input[type="submit"] {
-    padding: 0.75em 2em;
-}
-
+a.button.secondary,
 button.secondary,
 input[type="reset"],
 input[type="button"].secondary,
@@ -661,6 +661,8 @@ input[type="submit"].secondary {
     color: #222;
 }
 
+a.button:hover,
+a.button:focus,
 button:hover,
 button:focus,
 input[type="button"]:hover,
@@ -670,6 +672,8 @@ input[type="submit"]:focus {
     background: #767676;
 }
 
+a.button.secondary:hover,
+a.button.secondary:focus,
 button.secondary:hover,
 button.secondary:focus,
 input[type="reset"]:hover,
@@ -1556,17 +1560,17 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         text-align: center;
 
         .entry-content > * { color: white; }
+    }
 
-        .button {
-            background-color: $theme-gray;
-            color: $body-text-color;
+    .button {
+        background-color: $theme-gray;
+        color: $body-text-color;
 
-            &:hover,
-            &:active,
-            &:focus {
-                background-color: $body-text-color;
-                color: $theme-gray;
-            }
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: $body-text-color;
+            color: $theme-gray;
         }
     }
 }

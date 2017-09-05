@@ -10,7 +10,7 @@
 
 ?>
 <section class="tagline">
-    <div class="wrap">
+    <div class="wrap full">
         <article class="educate">
             <h2>Educate</h2>
             <p>Respected speakers <strong>educate</strong> you for the houmeschool journey.</p>
@@ -31,7 +31,7 @@
 <section class="locations-map">
     <?php include( get_stylesheet_directory() . '/img/US-map.svg' ); ?>
     <section class="locations">
-        <div class="wrap">
+        <div class="wrap full">
             <div class="se theme bg">
                 <a href="/locations/southeast/">
                     <h2>Southeast</h2>

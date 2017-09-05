@@ -1174,6 +1174,17 @@ body {
         content: "";
         display: block;
     }
+
+    &.full {
+        display: flex;
+        flex-wrap: wrap;
+
+        @media screen and (max-width: 48em) {
+            margin: 0;
+            padding: 0;
+            max-width: 100%;
+        }
+    }
 }
 
 /*--------------------------------------------------------------
@@ -1468,19 +1479,6 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         background-color: $theme-teal;
 
         h2 { margin-bottom: 0; }
-    }
-}
-
-.tagline, .locations {
-    .wrap {
-        display: flex;
-        flex-wrap: wrap;
-
-        @media screen and (max-width: 48em) {
-            margin: 0;
-            padding: 0;
-            max-width: 100%;
-        }
     }
 }
 

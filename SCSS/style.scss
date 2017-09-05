@@ -774,6 +774,16 @@ input[type="submit"].secondary:focus {
     }
 }
 
+.theme.gray {
+    color: $theme-gray;
+
+    &.bg {
+        background-color: $theme-gray;
+
+        &, * { color: $body-text-color; }
+    }
+}
+
 hr {
     background-color: #bbb;
     border: 0;

@@ -2184,6 +2184,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
     h3.post-title { padding-top: 0; }
 
+    &.contains-name.contains-image:not(.contains-excerpt) .post-title { text-align: center; }
+
     .conventions-attending {
         text-align: center;
         margin-bottom: 1em;

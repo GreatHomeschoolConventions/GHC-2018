@@ -1190,11 +1190,11 @@ body {
     &.full {
         display: flex;
         flex-wrap: wrap;
+        max-width: 100%;
 
         @media screen and (max-width: 48em) {
             margin: 0;
             padding: 0;
-            max-width: 100%;
         }
     }
 }

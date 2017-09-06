@@ -33,6 +33,7 @@ $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-se
    13.5 Pages
    13.6 Footer
    13.7 Speakers
+   13.8 Locations
 14.0 Comments
 15.0 Widgets
 16.0 Media
@@ -1868,7 +1869,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .single-featured-image-header {
     background-color: #fafafa;
-    border-bottom: 1px solid #eee;
 }
 
 .single-featured-image-header img {
@@ -2200,6 +2200,60 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .convention {
     &-link { box-shadow: none; }
+}
+
+/*--------------------------------------------------------------
+13.8 Locations
+--------------------------------------------------------------*/
+
+.single-location {
+    .entry-title {
+        width: 100%;
+        margin: 0;
+        padding: 1em 1rem;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        color: white;
+        text-shadow: 0 0 0.5em rgba(black,0.9);
+
+        @media screen and (min-width: 30em) { font-size: 4rem; }
+        @media screen and (min-width: 48em) { font-size: 5rem; }
+        @media screen and (min-width: 60em) { font-size: 6rem; }
+    }
+
+    .site-content { padding-top: 0; }
+
+    .dates {
+        background-color: $theme-orange;
+
+        * { color: white; }
+    }
+
+    &.location-california .dates { background-color: $theme-blue; }
+    &.location-missouri .dates {
+        background-color: $theme-yellow;
+
+        * { color: $theme-blue; }
+    }
+
+    #content #primary {
+        float: none;
+        width: 100%;
+    }
+
+    .wrap.full { padding: 2em; }
+
+    .venue, .dates {
+        width: 50%;
+        padding: 2em;
+
+        @media screen and (max-width: 30em) { width: 100%; }
+    }
+}
+
+.venue-date-info {
+    &.wrap.full { padding: 0; }
 }
 
 /*--------------------------------------------------------------

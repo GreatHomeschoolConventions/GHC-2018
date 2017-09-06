@@ -1560,9 +1560,6 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 
     .speaker,
     .sponsor {
-        padding: 0 1em 1em;
-        box-sizing: border-box;
-
         @media screen and (max-width: 30em) { width: 50%; }
         @media screen and (min-width: 30em) { padding: 0 2em 1em; }
 
@@ -2154,51 +2151,49 @@ body:not(.twentyseventeen-front-page) .entry-header {
 13.7 Speakers
 --------------------------------------------------------------*/
 
-.speaker {
-    &-archive {
-        .speaker-container,
-        .special_event-container {
-            display: flex;
-            flex-wrap: wrap;
-        }
+.speaker-container,
+.special_event-container {
+    display: flex;
+    flex-wrap: wrap;
+}
 
-        .speaker,
-        .special_event {
-            box-sizing: border-box;
-            padding: 1em;
-            margin-bottom: 2em;
-        }
+.speaker,
+.special_event,
+.sponsor {
+    box-sizing: border-box;
+    padding: 1em;
+    margin-bottom: 2em;
+}
 
-        .speaker {
-            width: 25%;
+.speaker,
+.sponsor {
+    width: 25%;
 
-            @media screen and (max-width: 48em) { width: 50%; }
-            @media screen and (max-width: 30em) { width: 100%; }
-
-            .wp-post-image {
-                width: 100%;
-                height: auto;
-                max-width: 250px;
-                display: block;
-                margin: 0 auto 1em;
-            }
-
-            h3.post-title { padding-top: 0; }
-
-            .conventions-attending {
-                text-align: center;
-                margin-bottom: 1em;
-            }
-        }
-
-        .special_event {
-            width: 50%;
-
-            @media screen and (max-width: 48em) { width: 100%; }
-        }
-    }
+    @media screen and (max-width: 48em) { width: 50%; }
+    @media screen and (max-width: 30em) { width: 100%; }
 
     &-thumbnail a { box-shadow: none; }
+
+    .wp-post-image {
+        width: 100%;
+        height: auto;
+        max-width: 250px;
+        display: block;
+        margin: 0 auto 1em;
+    }
+
+    h3.post-title { padding-top: 0; }
+
+    .conventions-attending {
+        text-align: center;
+        margin-bottom: 1em;
+    }
+}
+
+.special_event {
+    width: 50%;
+
+    @media screen and (max-width: 48em) { width: 100%; }
 }
 
 .convention {

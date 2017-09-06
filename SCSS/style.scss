@@ -466,6 +466,8 @@ h6 {
 p {
     margin: 0 0 1.5em;
     padding: 0;
+
+    .excerpt &:last-child { margin-bottom: 0; }
 }
 
 dfn,

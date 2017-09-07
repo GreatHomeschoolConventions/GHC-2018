@@ -784,6 +784,8 @@ input[type="submit"].secondary:focus {
         background-color: $theme-gray;
 
         &, * { color: $body-text-color; }
+
+        .button { color: white; }
     }
 }
 
@@ -885,7 +887,7 @@ a:active {
 
 /* Hover effects */
 
-.wrap a,
+.site-content a,
 .entry-content a,
 .entry-summary a,
 .widget a,
@@ -901,6 +903,7 @@ a:active {
     }
 }
 
+.theme.bg:not(.gray) a,
 .entry-title a,
 .entry-meta a,
 .page-links a,

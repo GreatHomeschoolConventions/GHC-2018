@@ -61,6 +61,36 @@ get_header(); ?>
                 </article>
             </div>
 
+            <div class="theme gray bg">
+                <article class="wrap">
+                    <h2 id="special-tracks">Special Tracks</h2>
+                    <ul>
+                        <?php
+                        $special_tracks_tax_args = array(
+                            'taxonomy'              => 'ghc_special_tracks_taxonomy',
+                        );
+                        $special_tracks = get_categories( $special_tracks_tax_args );
+
+                        if ( $special_tracks ) {
+                            echo '<div class="special-track-container">';
+                            foreach ( $special_tracks as $track ) {
+                                echo '<article class="special-track ' . $track->slug . '">';
+                                if ( get_field( 'featured_image', $track ) ) {
+                                    echo '<a class="track-link" href="' . get_term_link( $track ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>';
+                                }
+                                echo '<h3><a href="' . get_term_link( $track ) . '">' . $track->name . '</a></h3>';
+                                if ( $track->description != '' ) {
+                                    echo wpautop( $track->description );
+                                    echo '<p><a href="' . get_term_link( $track ) . '" class="button">More Information&rarr;</a></p>';
+                                }
+                                echo '</article>';
+                            }
+                            echo '</div>';
+                        } ?>
+                    </ul>
+                </article>
+            </div>
+
             <div class="theme <?php echo $convention_abbreviation; ?> bg">
                 <article class="wrap">
                     <h2 id="exhibitors">Exhibitors</h2>

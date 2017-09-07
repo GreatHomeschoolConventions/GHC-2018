@@ -1542,13 +1542,6 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         text-align: center;
     }
 
-    .speaker-container,
-    .sponsor-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
     .featured-speakers {
         background-color: $theme-blue;
         text-align: center;
@@ -2153,9 +2146,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 --------------------------------------------------------------*/
 
 .speaker-container,
-.special_event-container {
+.special_event-container,
+.sponsor-container {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 }
 
 .speaker,

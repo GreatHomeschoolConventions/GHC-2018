@@ -61,6 +61,13 @@ get_header(); ?>
                 </article>
             </div>
 
+            <div class="theme <?php echo $convention_abbreviation; ?> bg">
+                <article class="wrap">
+                    <h2 id="exhibitors">Exhibitors</h2>
+                    <?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
+                </article>
+            </div>
+
             <div class="wrap">
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                     <div class="entry-content">

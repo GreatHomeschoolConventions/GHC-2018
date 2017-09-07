@@ -2166,6 +2166,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 }
 
+.exhibitor-container {
+    list-style-type: none;
+    column-count: 2;
+    column-gap: 1em;
+
+    @media screen and (min-width: 30em) {
+        column-count: 3;
+        column-gap: 2em;
+    }
+    @media screen and (min-width: 48em) { column-count: 4; }
+}
+
 .hotel,
 .speaker,
 .sponsor,

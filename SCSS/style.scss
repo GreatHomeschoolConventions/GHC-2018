@@ -885,6 +885,7 @@ a:active {
 
 /* Hover effects */
 
+.wrap a,
 .entry-content a,
 .entry-summary a,
 .widget a,
@@ -893,6 +894,11 @@ a:active {
 .widget_authors a strong {
     box-shadow: inset 0 -1px 0 rgba(15, 15, 15, 1);
     transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
+
+    &:focus, &:hover {
+        color: #000;
+        box-shadow: inset 0 0 0 rgba(0, 0, 0, 0), 0 3px 0 rgba(0, 0, 0, 1);
+    }
 }
 
 .entry-title a,
@@ -1174,12 +1180,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     max-width: 700px;
-    padding-left: 2em;
-    padding-right: 2em;
+    padding: 2em;
 
     @media screen and (max-width: 20em) {
-        padding-left: 1em;
-        padding-right: 1em;
+        padding: 1em;
     }
 
     &:after {
@@ -1193,10 +1197,7 @@ body {
         flex-wrap: wrap;
         max-width: 100%;
 
-        @media screen and (max-width: 48em) {
-            margin: 0;
-            padding: 0;
-        }
+        @media screen and (max-width: 48em) { margin: 0; }
     }
 }
 
@@ -2242,8 +2243,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
         width: 100%;
     }
 
-    .wrap.full { padding: 2em; }
-
     .venue, .dates {
         width: 50%;
         padding: 2em;
@@ -2253,7 +2252,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .venue-date-info {
-    &.wrap.full { padding: 0; }
+    padding: 0;
+
+    .wrap {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0;
+    }
 }
 
 /*--------------------------------------------------------------

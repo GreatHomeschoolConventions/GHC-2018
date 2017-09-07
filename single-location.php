@@ -24,36 +24,38 @@ get_header(); ?>
             $convention_abbreviation = strtolower( get_field( 'convention_abbreviated_name' ) );
             ?>
 
-            <div class="wrap full venue-date-info">
-                <div class="venue theme <?php echo $convention_abbreviation; ?> bg">
-                    <h2>Venue</h2>
-                    <address>
-                        <?php the_field( 'convention_center_name' ); ?><br/>
-                        <?php the_field( 'address' ); ?><br/>
-                        <?php the_field( 'city' ); ?>, <?php the_field( 'state' ); ?> <?php the_field( 'zip' ); ?>
-                    </address>
-                </div>
+            <div class="full venue-date-info">
+                <article class="wrap">
+                    <div class="venue theme <?php echo $convention_abbreviation; ?> bg">
+                        <h2>Venue</h2>
+                        <address>
+                            <?php the_field( 'convention_center_name' ); ?><br/>
+                            <?php the_field( 'address' ); ?><br/>
+                            <?php the_field( 'city' ); ?>, <?php the_field( 'state' ); ?> <?php the_field( 'zip' ); ?>
+                        </address>
+                    </div>
 
-                <div class="dates theme bg">
-                    <h2>Dates</h2>
-                    <p><?php echo ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ); ?></p>
-                    <?php
-                    if ( get_field( 'ics_file' ) ) {
-                        echo '<p><a class="button" href="' . get_field( 'ics_file' ) . '">Add to my calendar&rarr;</a></p>';
-                    }
-                    ?>
-                </div>
+                    <div class="dates theme bg">
+                        <h2>Dates</h2>
+                        <p><?php echo ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ); ?></p>
+                        <?php
+                        if ( get_field( 'ics_file' ) ) {
+                            echo '<p><a class="button" href="' . get_field( 'ics_file' ) . '">Add to my calendar&rarr;</a></p>';
+                        }
+                        ?>
+                    </div>
+                </article>
             </div>
 
-            <div class="wrap full theme gray bg">
-                <article>
+            <div class="theme gray bg">
+                <article class="wrap">
                     <h2>Special Events</h2>
                     <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt" image_size="600, 300"]' ); ?>
                 </article>
             </div>
 
-            <div class="wrap full theme <?php echo $convention_abbreviation; ?> bg">
-                <article>
+            <div class="theme <?php echo $convention_abbreviation; ?> bg">
+                <article class="wrap">
                     <h2>Featured Speakers</h2>
                     <?php echo do_shortcode( '[speaker_grid convention="' . $convention_abbreviation . '" show="name,image"]' ); ?>
                 </article>

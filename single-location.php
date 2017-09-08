@@ -48,6 +48,21 @@ get_header(); ?>
             </div>
 
             <div class="theme bg">
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'wrap' ); ?>>
+                    <div class="entry-content">
+                        <?php
+                            the_content();
+
+                            wp_link_pages( array(
+                                'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                                'after'  => '</div>',
+                            ) );
+                        ?>
+                    </div><!-- .entry-content -->
+                </article><!-- #post-## -->
+            </div>
+
+            <div class="theme bg">
                 <article class="wrap">
                     <h2 id="special-events">Special Events</h2>
                     <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt" image_size="special-event-large"]' ); ?>
@@ -97,19 +112,11 @@ get_header(); ?>
             </div>
 
             <div class="theme bg">
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'wrap' ); ?>>
-                    <div class="entry-content">
-                        <?php
-                            the_content();
-
-                            wp_link_pages( array(
-                                'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-                                'after'  => '</div>',
-                            ) );
-                        ?>
-                    </div><!-- .entry-content -->
-                </article><!-- #post-## -->
-            </div><!-- .wrap -->
+                <article class="wrap">
+                    <h2 id="hotels">Discounted Hotels</h2>
+                    <?php echo do_shortcode( '[hotel_grid convention="' . $convention_abbreviation . '"]' ); ?>
+                </article>
+            </div>
 
         <?php
         endwhile; // End of the loop.

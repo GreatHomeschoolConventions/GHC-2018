@@ -24,9 +24,9 @@ get_header(); ?>
             $convention_abbreviation = strtolower( get_field( 'convention_abbreviated_name' ) );
             ?>
 
-            <div class="full venue-date-info">
+            <div class="theme bg venue-date-info">
                 <article class="wrap">
-                    <div class="venue theme <?php echo $convention_abbreviation; ?> bg">
+                    <div class="venue">
                         <h2 id="venue">Venue</h2>
                         <address>
                             <?php the_field( 'convention_center_name' ); ?><br/>
@@ -35,7 +35,7 @@ get_header(); ?>
                         </address>
                     </div>
 
-                    <div class="dates theme bg">
+                    <div class="dates">
                         <h2 id="dates">Dates</h2>
                         <p><?php echo ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ); ?></p>
                         <?php
@@ -47,59 +47,57 @@ get_header(); ?>
                 </article>
             </div>
 
-            <div class="theme gray bg">
+            <div class="theme bg">
                 <article class="wrap">
                     <h2 id="special-events">Special Events</h2>
                     <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt" image_size="special-event-large"]' ); ?>
                 </article>
             </div>
 
-            <div class="theme <?php echo $convention_abbreviation; ?> bg">
+            <div class="theme bg">
                 <article class="wrap">
                     <h2 id="featured-speakers">Featured Speakers</h2>
                     <?php echo do_shortcode( '[speaker_grid convention="' . $convention_abbreviation . '" show="name,image" image_size="square-thumb"]' ); ?>
                 </article>
             </div>
 
-            <div class="theme gray bg">
+            <div class="theme bg">
                 <article class="wrap">
                     <h2 id="special-tracks">Special Tracks</h2>
-                    <ul>
-                        <?php
-                        $special_tracks_tax_args = array(
-                            'taxonomy'              => 'ghc_special_tracks_taxonomy',
-                        );
-                        $special_tracks = get_categories( $special_tracks_tax_args );
+                    <?php
+                    $special_tracks_tax_args = array(
+                        'taxonomy'              => 'ghc_special_tracks_taxonomy',
+                    );
+                    $special_tracks = get_categories( $special_tracks_tax_args );
 
-                        if ( $special_tracks ) {
-                            echo '<div class="special-track-container">';
-                            foreach ( $special_tracks as $track ) {
-                                echo '<article class="special-track ' . $track->slug . '">';
-                                if ( get_field( 'featured_image', $track ) ) {
-                                    echo '<a class="track-link" href="' . get_term_link( $track ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>';
-                                }
-                                echo '<h3><a href="' . get_term_link( $track ) . '">' . $track->name . '</a></h3>';
-                                if ( $track->description != '' ) {
-                                    echo wpautop( $track->description );
-                                    echo '<p><a href="' . get_term_link( $track ) . '" class="button">More Information&rarr;</a></p>';
-                                }
-                                echo '</article>';
+                    if ( $special_tracks ) {
+                        echo '<div class="special-track-container">';
+                        foreach ( $special_tracks as $track ) {
+                            echo '<article class="special-track ' . $track->slug . '">';
+                            if ( get_field( 'featured_image', $track ) ) {
+                                echo '<a class="track-link" href="' . get_term_link( $track ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>';
                             }
-                            echo '</div>';
-                        } ?>
-                    </ul>
+                            echo '<h3><a href="' . get_term_link( $track ) . '">' . $track->name . '</a></h3>';
+                            if ( $track->description != '' ) {
+                                echo wpautop( $track->description );
+                                echo '<p><a href="' . get_term_link( $track ) . '" class="button">More Information&rarr;</a></p>';
+                            }
+                            echo '</article>';
+                        }
+                        echo '</div>';
+                    } ?>
                 </article>
             </div>
 
-            <div class="theme <?php echo $convention_abbreviation; ?> bg">
+            <div class="theme bg">
                 <article class="wrap">
                     <h2 id="exhibitors">Exhibitors</h2>
                     <?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
                 </article>
             </div>
 
-            <div class="wrap">
-                <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <div class="theme bg">
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'wrap' ); ?>>
                     <div class="entry-content">
                         <?php
                             the_content();

@@ -2182,20 +2182,33 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .speaker,
 .sponsor,
 .special-track {
-    width: 25%;
 
-    @media screen and (max-width: 48em) { width: 50%; }
-    @media screen and (max-width: 30em) { width: 100%; }
+    &-container & {
+        width: 25%;
 
-    &-thumbnail a { box-shadow: none; }
+        @media screen and (max-width: 48em) { width: 50%; }
+        @media screen and (max-width: 30em) { width: 100%; }
 
-    .wp-post-image {
-        width: 100%;
-        height: auto;
-        max-width: 250px;
-        display: block;
-        margin: 0 auto 1em;
+        .wp-post-image {
+            width: 100%;
+            height: auto;
+            max-width: 250px;
+            display: block;
+            margin: 0 auto 1em;
+        }
     }
+
+    .archive & {
+        @media screen and (min-width: 30em) {
+            .post-thumbnail {
+                float: left;
+                width: 25%;
+                margin-right: 2em;
+            }
+        }
+    }
+
+    &-thumbnail a, .post-thumbnail a { box-shadow: none; }
 
     h3.post-title { padding-top: 0; }
 

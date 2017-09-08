@@ -2314,11 +2314,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
         padding: 0;
     }
 
-    .location-southeast & { background-image: linear-gradient( to right, $theme-blue 0, $theme-blue 50%, $theme-orange 50%, $theme-orange 100% ); }
-    .location-texas & { background-image: linear-gradient( to right, $theme-yellow 0, $theme-yellow 50%, $theme-orange 50%, $theme-orange 100% ); }
-    .location-midwest & { background-image: linear-gradient( to right, $theme-green 0, $theme-green 50%, $theme-orange 50%, $theme-orange 100% ); }
-    .location-california & { background-image: linear-gradient( to right, $theme-orange 0, $theme-orange 50%, $theme-blue 50%, $theme-blue 100% ); }
-    .location-missouri & { background-image: linear-gradient( to right, $theme-blue 0, $theme-blue 50%, $theme-yellow 50%, $theme-yellow 100% ); }
+    @media screen and (min-width: 30em) {
+        .location-southeast & { background-image: linear-gradient( to right, $theme-blue 0, $theme-blue 50%, $theme-orange 50%, $theme-orange 100% ); }
+        .location-texas & { background-image: linear-gradient( to right, $theme-yellow 0, $theme-yellow 50%, $theme-orange 50%, $theme-orange 100% ); }
+        .location-midwest & { background-image: linear-gradient( to right, $theme-green 0, $theme-green 50%, $theme-orange 50%, $theme-orange 100% ); }
+        .location-california & { background-image: linear-gradient( to right, $theme-orange 0, $theme-orange 50%, $theme-blue 50%, $theme-blue 100% ); }
+        .location-missouri & { background-image: linear-gradient( to right, $theme-blue 0, $theme-blue 50%, $theme-yellow 50%, $theme-yellow 100% ); }
+    }
 }
 
 /*--------------------------------------------------------------

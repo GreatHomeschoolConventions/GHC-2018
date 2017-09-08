@@ -904,7 +904,7 @@ a:active {
     }
 }
 
-.theme.bg:not(.gray) a,
+.single-location .theme.bg:nth-child(odd) a,
 .entry-title a,
 .entry-meta a,
 .page-links a,

@@ -38,6 +38,11 @@
         } else {
             the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
         }
+
+        if ( is_tax() ) {
+            $cpt_object = get_post_type_object( get_post_type() );
+            echo '<p class="entry-meta dashicons-before ' . $cpt_object->menu_icon . '"></span> ' . $cpt_object->labels->singular_name . '</p>';
+        }
         ?>
     </header><!-- .entry-header -->
 

@@ -2304,17 +2304,30 @@ body:not(.twentyseventeen-front-page) .entry-header {
         &:nth-child(even) { background-color: $theme-gray; }
     }
 
-    &.location-southeast .theme.bg:nth-child(odd) { background-color: $theme-blue; }
-    &.location-texas .theme.bg:nth-child(odd) {
-        background-color: $theme-yellow;
+    &.location-southeast {
+        .venue, .theme.bg:nth-child(odd) { background-color: $theme-blue; }
+    }
+    &.location-texas {
+        .venue, .theme.bg:nth-child(odd) {
+            background-color: $theme-yellow;
+
+            * { color: $theme-blue; }
+        }
+
         *:not(.button) { color: $theme-blue; }
+
         .dates * { color: white; }
     }
-    &.location-midwest .theme.bg:nth-child(odd) { background-color: $theme-green; }
-    &.location-california .theme.bg:nth-child(odd) { background-color: $theme-orange; }
-    &.location-missouri .theme.bg:nth-child(odd) {
-        background-color: $theme-magenta;
-        .dates * { color: $theme-blue; }
+    &.location-midwest {
+        .venue, .theme.bg:nth-child(odd) { background-color: $theme-green; }
+    }
+    &.location-california {
+        .venue, .theme.bg:nth-child(odd) { background-color: $theme-orange; }
+    }
+    &.location-missouri {
+        .venue, .theme.bg:nth-child(odd) { background-color: $theme-magenta; }
+
+        .theme.bg .dates * { color: $theme-blue; }
     }
 }
 
@@ -2332,7 +2345,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
         .location-texas & { background-image: linear-gradient( to right, $theme-yellow 0, $theme-yellow 50%, $theme-orange 50%, $theme-orange 100% ); }
         .location-midwest & { background-image: linear-gradient( to right, $theme-green 0, $theme-green 50%, $theme-orange 50%, $theme-orange 100% ); }
         .location-california & { background-image: linear-gradient( to right, $theme-orange 0, $theme-orange 50%, $theme-blue 50%, $theme-blue 100% ); }
-        .location-missouri & { background-image: linear-gradient( to right, $theme-blue 0, $theme-blue 50%, $theme-yellow 50%, $theme-yellow 100% ); }
+        .location-missouri & { background-image: linear-gradient( to right, $theme-magenta 0, $theme-magenta 50%, $theme-yellow 50%, $theme-yellow 100% ); }
     }
 }
 

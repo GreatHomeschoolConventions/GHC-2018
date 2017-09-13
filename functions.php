@@ -18,7 +18,7 @@ add_action( 'wp_enqueue_scripts', 'ghc_2018_minified_css', 5 );
  *
  * @param  object|string $d1            start DateTime object or string
  * @param  object|string $d2            end DateTime object or string
- * @param  string        [$format       = ''] date format if passed as strings
+ * @param  string        [$format       = ''] input date format if passed as strings
  * @return string        formatted date string
  */
 function ghc_format_date_range( $d1, $d2, $format = '' ) {

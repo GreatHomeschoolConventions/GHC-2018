@@ -41,3 +41,5 @@ function ghc_format_date_range( $d1, $d2, $format = '' ) {
         return $d1->format( 'F d, Y' ) . '&ndash;' . $d2->format( 'F d, Y' );
     }
 }
+
+include( 'functions-woocommerce.php' );

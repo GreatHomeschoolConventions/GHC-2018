@@ -30,45 +30,7 @@
 </section>
 <section class="locations-map">
     <?php include( get_stylesheet_directory() . '/img/US-map.svg' ); ?>
-    <section class="locations">
-        <div class="wrap full">
-            <div class="se theme bg">
-                <a href="/locations/southeast/">
-                    <h2>Southeast</h2>
-                    <p class="info">March 8&ndash;10, 2018</p>
-                    <p>More Information&rarr;</p>
-                </a>
-            </div>
-            <div class="tx theme bg">
-                <a href="/locations/texas/">
-                    <h2>Texas</h2>
-                    <p class="info">March 15&ndash;17, 2018</p>
-                    <p>More Information&rarr;</p>
-                </a>
-            </div>
-            <div class="mw theme bg">
-                <a href="/locations/midwest/">
-                    <h2>Midwest</h2>
-                    <p class="info">April 12&ndash;14, 2018</p>
-                    <p>More Information&rarr;</p>
-                </a>
-            </div>
-            <div class="ca theme bg">
-                <a href="/locations/california/">
-                    <h2>California</h2>
-                    <p class="info">June 14&ndash;16, 2018</p>
-                    <p>More Information&rarr;</p>
-                </a>
-            </div>
-            <div class="mo theme bg">
-                <a href="/locations/missouri/">
-                    <h2>Missouri</h2>
-                    <p class="info">July 19&ndash;21, 2018</p>
-                    <p>More Information&rarr;</p>
-                </a>
-            </div>
-        </div>
-    </section>
+    <?php echo ghc_locations_stripe(); ?>
 </section>
 <section class="featured-speakers">
     <div class="wrap">

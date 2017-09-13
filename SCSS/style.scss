@@ -1512,33 +1512,33 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         height: auto;
         margin: 1em auto;
     }
+}
 
-    .locations {
-        background: linear-gradient(to right, $theme-blue 0%, $theme-blue 50%, $theme-magenta 50%, $theme-magenta 100%);
+.locations {
+    background: linear-gradient(to right, $theme-blue 0%, $theme-blue 50%, $theme-magenta 50%, $theme-magenta 100%);
 
-        @media screen and (min-width: 48em) { margin-bottom: 2em; }
+    @media screen and (min-width: 48em) { margin-bottom: 2em; }
 
-        .theme {
-            padding: 1em;
-            width: 20%;
-            text-align: center;
+    .theme {
+        padding: 1em;
+        width: 20%;
+        text-align: center;
 
-            h2, p {
-                padding: 0;
-                margin: 0;
-            }
+        h2, p {
+            padding: 0;
+            margin: 0;
+        }
 
-            .info {
-                font-family: $body-font-family;
-                font-weight: 400;
-                font-size: 0.8rem;
-            }
+        .info {
+            font-family: $body-font-family;
+            font-weight: 400;
+            font-size: 0.8rem;
+        }
 
-            @media screen and (max-width: 48em) {
-                width: 50%;
+        @media screen and (max-width: 48em) {
+            width: 50%;
 
-                &:last-child { width: 100%; }
-            }
+            &:last-child { width: 100%; }
         }
     }
 }

@@ -2219,7 +2219,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 
     &-thumbnail a, .post-thumbnail a {
-        &, &:hover { box-shadow: none; }
+        &, &:hover, img { box-shadow: none; }
     }
 
     h3.post-title { padding-top: 0; }

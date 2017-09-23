@@ -2300,7 +2300,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
     .theme.bg {
         &:nth-child(odd) {
             * { color: white; }
-
         }
         &:nth-child(even) { background-color: $theme-gray; }
     }
@@ -2314,7 +2313,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             *:not(.button) { color: inherit; }
 
-            .dates, a.button { color: white; }
+            .dates, .button, input[type="submit"] { color: white; }
         }
     }
     &.location-midwest {
@@ -2323,7 +2322,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             *:not(.button) { color: inherit; }
 
-            .dates, a.button { color: white; }
+            .dates, .button, input[type="submit"] { color: white; }
         }
     }
     &.location-california {
@@ -2335,11 +2334,9 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             *:not(.button) { color: white; }
 
-            .dates * {
-                color: initial;
+            .dates * { color: initial; }
 
-                .button { color: white; }
-            }
+            .button, input[type="submit"] { color: white; }
         }
     }
 }

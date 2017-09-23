@@ -26,8 +26,8 @@ get_header(); ?>
 
             <div class="theme bg venue-date-info">
                 <article class="wrap">
-                    <div class="venue">
-                        <h2 id="venue">Venue</h2>
+                    <div id="venue" class="venue">
+                        <h2>Venue</h2>
                         <address>
                             <?php the_field( 'convention_center_name' ); ?><br/>
                             <?php the_field( 'address' ); ?><br/>
@@ -35,8 +35,8 @@ get_header(); ?>
                         </address>
                     </div>
 
-                    <div class="dates">
-                        <h2 id="dates">Dates</h2>
+                    <div id="dates" class="dates">
+                        <h2>Dates</h2>
                         <p><?php echo ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ); ?></p>
                         <?php
                         if ( get_field( 'ics_file' ) ) {
@@ -47,7 +47,7 @@ get_header(); ?>
                 </article>
             </div>
 
-            <div class="theme bg">
+            <div id="features" class="theme bg">
                 <article id="post-<?php the_ID(); ?>" <?php post_class( 'wrap' ); ?>>
                     <div class="entry-content">
                         <?php
@@ -62,23 +62,41 @@ get_header(); ?>
                 </article><!-- #post-## -->
             </div>
 
-            <div class="theme bg">
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="special-events" class="theme bg">
                 <article class="wrap">
-                    <h2 id="special-events">Special Events</h2>
+                    <h2>Special Events</h2>
                     <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt" image_size="special-event-large"]' ); ?>
                 </article>
             </div>
 
-            <div class="theme bg">
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="speakers" class="theme bg">
                 <article class="wrap">
-                    <h2 id="featured-speakers">Featured Speakers</h2>
+                    <h2>Featured Speakers</h2>
                     <?php echo do_shortcode( '[speaker_grid convention="' . $convention_abbreviation . '" show="name,image" image_size="square-thumb"]' ); ?>
                 </article>
             </div>
 
-            <div class="theme bg">
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="special-tracks" class="theme bg">
                 <article class="wrap">
-                    <h2 id="special-tracks">Special Tracks</h2>
+                    <h2>Special Tracks</h2>
                     <?php
                     $special_tracks_tax_args = array(
                         'taxonomy'              => 'ghc_special_tracks_taxonomy',
@@ -104,18 +122,49 @@ get_header(); ?>
                 </article>
             </div>
 
-            <div class="theme bg">
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="workshops" class="theme bg">
                 <article class="wrap">
-                    <h2 id="exhibitors">Exhibitors</h2>
+                    <h2>Workshops</h2>
+                    <?php echo do_shortcode( '[workshop_list convention="' . $convention_abbreviation . '" posts_per_page="30"]' ); ?>
+                </article>
+            </div>
+
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="exhibitors" class="theme bg">
+                <article class="wrap">
+                    <h2>Exhibitors</h2>
                     <?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
                 </article>
             </div>
 
-            <div class="theme bg">
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
+            </div>
+
+            <div id="hotels" class="theme bg">
                 <article class="wrap">
-                    <h2 id="hotels">Discounted Hotels</h2>
+                    <h2>Discounted Hotels</h2>
                     <?php echo do_shortcode( '[hotel_grid convention="' . $convention_abbreviation . '"]' ); ?>
                 </article>
+            </div>
+
+            <div class="cta theme bg">
+                <div class="wrap">
+                    <?php echo do_shortcode( '[convention_cta convention="' . $convention_abbreviation . '"]' ); ?>
+                </div>
             </div>
 
         <?php

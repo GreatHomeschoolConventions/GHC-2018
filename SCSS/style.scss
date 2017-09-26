@@ -2193,7 +2193,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
     @media screen and (min-width: 48em) { column-count: 4; }
 
-    .exhibitor { padding: 0; }
+    .exhibitor {
+        padding: 0;
+        margin-bottom: 0.5em;
+    }
 }
 
 .hotel,
@@ -2357,6 +2360,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
         .location-california & { background-image: linear-gradient( to right, $theme-orange 0, $theme-orange 50%, $theme-blue 50%, $theme-blue 100% ); }
         .location-missouri & { background-image: linear-gradient( to right, $theme-magenta 0, $theme-magenta 50%, $theme-yellow 50%, $theme-yellow 100% ); }
     }
+}
+
+.workshop-list {
+    li { margin-bottom: 0.5em; }
 }
 
 /*--------------------------------------------------------------

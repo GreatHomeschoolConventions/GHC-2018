@@ -1194,10 +1194,6 @@ body {
     max-width: 700px;
     padding: 2em;
 
-    @media screen and (max-width: 20em) {
-        padding: 1em;
-    }
-
     &:after {
         clear: both;
         content: "";

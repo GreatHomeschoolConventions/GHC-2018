@@ -155,6 +155,12 @@ get_header(); ?>
             <div id="exhibitors" class="theme bg">
                 <article class="wrap">
                     <h2>Exhibitors</h2>
+                    <h3>Schedule</h3>
+                    <ul>
+                        <li><strong>Thursday</strong>: 6:00&ndash;9:00 PM&mdash;<strong>free</strong> shopping!</li>
+                        <li><strong>Friday</strong>: 9:30 AM&ndash;8:30 PM</li>
+                        <li><strong>Saturday</strong>: 9:30 AM&ndash;5:30 PM</li>
+                    </ul>
                     <?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
                 </article>
             </div>

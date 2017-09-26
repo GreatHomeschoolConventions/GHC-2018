@@ -2288,6 +2288,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
         * { color: $theme-blue; }
     }
 
+    #features .wrap {
+        display: flex;
+        flex-wrap: wrap;
+
+        article:nth-last-child(n+2), article:nth-last-child(n+2) ~ article {
+            @media screen and (min-width: 48em) { width: 50%; }
+        }
+    }
+
     #content #primary {
         float: none;
         width: 100%;

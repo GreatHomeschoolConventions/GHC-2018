@@ -48,18 +48,29 @@ get_header(); ?>
             </div>
 
             <div id="features" class="theme bg">
-                <article id="post-<?php the_ID(); ?>" <?php post_class( 'wrap' ); ?>>
-                    <div class="entry-content">
-                        <?php
-                            the_content();
+                <div class="wrap">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <div class="entry-content">
+                            <?php
+                                the_content();
 
-                            wp_link_pages( array(
-                                'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-                                'after'  => '</div>',
-                            ) );
-                        ?>
-                    </div><!-- .entry-content -->
-                </article><!-- #post-## -->
+                                wp_link_pages( array(
+                                    'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+                                    'after'  => '</div>',
+                                ) );
+                            ?>
+                        </div><!-- .entry-content -->
+                    </article><!-- #post-## -->
+
+                    <?php
+                    if ( get_field( 'hours' ) ) {
+                        echo '<article class="general-convention-hours">
+                            <h2>General Convention Schedule</h2>
+                            ' . get_field( 'hours' ) . '
+                        </article>';
+                    }
+                    ?>
+                </div>
             </div>
 
             <div class="cta theme bg">

@@ -2178,20 +2178,39 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 }
 
-.exhibitor-container.list {
-    list-style-type: none;
-    column-count: 2;
-    column-gap: 1em;
+.exhibitor-container {
+    &.list {
+        list-style-type: none;
+        column-count: 2;
+        column-gap: 1em;
 
-    @media screen and (min-width: 30em) {
-        column-count: 3;
-        column-gap: 2em;
+        @media screen and (min-width: 30em) {
+            column-count: 3;
+            column-gap: 2em;
+        }
+        @media screen and (min-width: 48em) { column-count: 4; }
+
+        .exhibitor {
+            padding: 0;
+            margin-bottom: 0.5em;
+        }
     }
-    @media screen and (min-width: 48em) { column-count: 4; }
 
-    .exhibitor {
-        padding: 0;
-        margin-bottom: 0.5em;
+    &.large {
+        display: flex;
+        flex-wrap: wrap;
+
+        .exhibitor {
+            width: 100%;
+            padding: 1em;
+
+            @media screen and (max-width: 30em) {
+                &:nth-child(odd) { background-color: $theme-gray; }
+            }
+
+            @media screen and (min-width: 30em) { width: 33%; }
+            @media screen and (min-width: 48em) { width: 25%; }
+        }
     }
 }
 

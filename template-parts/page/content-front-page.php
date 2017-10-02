@@ -13,7 +13,7 @@
     <div class="wrap full">
         <article class="educate">
             <h2>Educate</h2>
-            <p>Respected speakers <strong>educate</strong> you for the houmeschool journey.</p>
+            <p>Respected speakers <strong>educate</strong> you for the homeschool journey.</p>
         </article>
         <article class="encourage">
             <h2>Encourage</h2>
@@ -21,7 +21,7 @@
         </article>
         <article class="equip">
             <h2>Equip</h2>
-            <p>Comprehensize curriculum choices <strong>equip</strong> you to be the best.</p>
+            <p>Comprehensive curriculum choices <strong>equip</strong> you to be the best.</p>
         </article>
     </div>
     <article class="fun">

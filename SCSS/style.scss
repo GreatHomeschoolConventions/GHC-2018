@@ -2432,7 +2432,13 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .product-thumbnail img[src*=svg],
-.product .wp-post-image[src*=svg] { width: 100%; }
+.product .wp-post-image[src*=svg] {
+    width: 100%;
+
+    &[class*="size-50x50"] { width: 50px; }
+    &[class*="size-75x75"] { width: 75px; }
+    &[class*="size-100x100"] { width: 100px; }
+}
 
 /*--------------------------------------------------------------
 14.0 Comments

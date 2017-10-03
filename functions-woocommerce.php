@@ -27,3 +27,4 @@ function ghc_locations_stripe( $info_text = 'More Information&rarr;' ) {
     return ob_get_clean();
 }
 
+remove_action( 'woocommerce_after_template_part', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons_in_checkout' ) );

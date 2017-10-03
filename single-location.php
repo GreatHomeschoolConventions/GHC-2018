@@ -161,6 +161,8 @@ get_header(); ?>
                         <li><strong>Friday</strong>: 9:30 AM&ndash;8:30 PM</li>
                         <li><strong>Saturday</strong>: 9:30 AM&ndash;5:30 PM</li>
                     </ul>
+                    <p>Shopping-only tickets are also available at the door; get more information here:</p>
+                    <p><a class="button" href="<?php echo get_home_url(); ?>/shopping-ticket-information/">Shopping-Only Tickets&rarr;</a></p>
                     <?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
                 </article>
             </div>

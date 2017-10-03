@@ -2259,20 +2259,6 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 
-.related-sponsors {
-    text-align: center;
-    margin-bottom: 0;
-}
-
-.page:not(.home) .sponsor {
-    width: 50%;
-
-    .wp-post-image {
-        width: 100%;
-        padding: 0;
-    }
-}
-
 .special_event {
     width: 50%;
 
@@ -2404,6 +2390,22 @@ body:not(.twentyseventeen-front-page) .entry-header {
 .workshop-list {
     li { margin-bottom: 0.5em; }
 }
+
+.related-sponsors {
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.page:not(.home) .sponsor {
+    width: 50%;
+
+    .wp-post-image {
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
 
 /*--------------------------------------------------------------
 13.9 Custom Taxonomies

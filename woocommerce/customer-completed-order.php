@@ -25,7 +25,15 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
-<p><?php printf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ); ?></p>
+<p>Your order from Great Homeschool Conventions has been completed and your order details are shown below. Please print a copy of this email and bring it to the convention with you.</p>
+
+<p>To keep registration costs low, <strong>nothing</strong> will be mailed to you; your packet and any special event tickets will be available when you arrive at the convention.</p>
+
+<h2>Special Events and More</h2>
+
+<p>Watch your email in the coming weeks for FAQs, deals on hotels, and more.</p>
+
+<p>If you would like to add anything to your order, log in and <a href="https://www.greathomeschoolconventions.com/product-category/special-events/?utm_source=woocommerce&utm_medium=email-receipt&utm_campaign=registration-receipt&utm_content=add-to-order">place another order online</a> or email us at <a href="mailto:addtomyorder@greathomeschoolconventions.com/" target="_blank" >addtomyorder@greathomeschoolconventions.com</a>.</p>
 
 <?php
 

@@ -22,7 +22,17 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 echo "= " . $email_heading . " =\n\n";
 
-echo sprintf( __( "Hi there. Your recent order on %s has been completed. Your order details are shown below for your reference:", 'woocommerce' ), get_option( 'blogname' ) ) . "\n\n";
+echo sprintf( __( "Order Confirmation
+
+Your recent order on %s has been completed and your order details are shown below. Please print a copy of this email and bring it to the convention with you.
+
+To keep registration costs low, nothing will be mailed to you; your packet and any special event tickets will be available when you arrive at the convention.
+
+Special Events and More
+
+Watch your email in the coming weeks for FAQs, deals on hotels, and more.
+
+If you would like to add anything to your order, log in and place another order online (https://www.greathomeschoolconventions.com/product-category/special-events/) or email us at addtomyorder@greathomeschoolconventions.com.", 'woocommerce' ), get_option( 'blogname' ) ) . "\n\n";
 
 echo "=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=\n\n";
 

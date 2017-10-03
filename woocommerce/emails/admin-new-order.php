@@ -25,7 +25,19 @@
   */
  do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
- <p><?php printf( __( 'You have received an order from %s. The order is as follows:', 'woocommerce' ), $order->get_formatted_billing_full_name() ); ?></p>
+<style type="text/css">
+    div[style*="padding:70px 0 70px 0"] { padding-top: 0; }
+    #template_header_image img { width: 75px !important; }
+    .highlighted {
+        font-size: larger;
+        font-weight: bold;
+        background-color: yellow;
+    }
+    .order_item td { border: 1px solid black !important; }
+    #template_header_image, #template_header h1, #template_footer, table[style*="background-color:#00456a"], tfoot tr:nth-child(2) { display: none !important; }
+</style>
+
+ <p><?php printf( __( 'You have received an order from <span class="highlighted">%s</span>. The order is as follows:', 'woocommerce' ), $order->get_formatted_billing_full_name() ); ?></p>
 
  <?php
 

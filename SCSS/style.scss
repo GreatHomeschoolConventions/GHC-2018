@@ -2429,6 +2429,12 @@ body:not(.twentyseventeen-front-page) .entry-header {
     &-page {
         .button, input[type="button"] { background-color: $theme-orange; }
     }
+
+    a.ywsl-social {
+        margin-right: 1em;
+
+        &, img { box-shadow: none; }
+    }
 }
 
 .product-thumbnail img[src*=svg] { width: 100%; }

@@ -27,4 +27,35 @@ function ghc_locations_stripe( $info_text = 'More Information&rarr;' ) {
     return ob_get_clean();
 }
 
-remove_action( 'woocommerce_after_template_part', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons_in_checkout' ) );
+/**
+ * Tweak YITH Social Login locations
+ */
+if ( class_exists( 'YITH_WC_Social_Login_Frontend' ) ) {
+    // remove third “stripe”
+    remove_action( 'woocommerce_after_template_part', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons_in_checkout' ) );
+
+    // move above username/email
+    add_action( 'woocommerce_login_form_start', 'ghc_yith_social_login_returning' );
+    remove_action( 'woocommerce_login_form', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons' ) );
+
+    // add above new password field
+    add_filter( 'woocommerce_checkout_fields', 'ghc_yith_social_login_password' );
+}
+
+/**
+ * Wrap YITH Social Login in a paragraph
+ */
+function ghc_yith_social_login_returning() {
+    echo '<p>' . do_shortcode( '[yith_wc_social_login]' ) . '</p>';
+}
+
+/**
+ * Add YITH Social Login buttons above new password field
+ * @param  array $fields WooCommerce checkout fields
+ * @return array modified WooCommerce checkout fields
+ */
+function ghc_yith_social_login_password( $fields ) {
+    $fields['account']['account_password']['label'] = do_shortcode( '[yith_wc_social_login]' ) . '<br/>Or create a password:';
+
+    return $fields;
+}

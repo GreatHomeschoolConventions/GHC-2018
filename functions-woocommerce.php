@@ -35,17 +35,20 @@ if ( class_exists( 'YITH_WC_Social_Login_Frontend' ) ) {
     remove_action( 'woocommerce_after_template_part', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons_in_checkout' ) );
 
     // move above username/email
-    add_action( 'woocommerce_login_form_start', 'ghc_yith_social_login_returning' );
+    add_action( 'woocommerce_login_form_start', 'ghc_yith_social_login_wrap' );
     remove_action( 'woocommerce_login_form', array( YITH_WC_Social_Login_Frontend::get_instance(), 'social_buttons' ) );
 
     // add above new password field
     add_filter( 'woocommerce_checkout_fields', 'ghc_yith_social_login_password' );
+
+    // add at top of billing fields
+    add_action( 'woocommerce_before_checkout_billing_form', 'ghc_yith_social_login_wrap' );
 }
 
 /**
  * Wrap YITH Social Login in a paragraph
  */
-function ghc_yith_social_login_returning() {
+function ghc_yith_social_login_wrap() {
     echo '<p>' . do_shortcode( '[yith_wc_social_login]' ) . '</p>';
 }
 

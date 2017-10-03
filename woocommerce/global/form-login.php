@@ -33,11 +33,11 @@ if ( is_user_logged_in() ) {
 
     <p class="form-row form-row-first">
         <label for="username"><?php _e( 'Username or email', 'woocommerce' ); ?> <span class="required">*</span></label>
-        <input type="text" class="input-text" name="username" id="username" />
+        <input type="text" class="input-text" name="username" id="username" placeholder="john.doe@example.com" />
     </p>
     <p class="form-row form-row-last">
         <label for="password"><?php _e( 'Password', 'woocommerce' ); ?> <span class="required">*</span></label>
-        <input class="input-text" type="password" name="password" id="password" />
+        <input class="input-text" type="password" name="password" id="password" placeholder="••••••••••" />
     </p>
     <div class="clear"></div>
 

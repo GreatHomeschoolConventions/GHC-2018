@@ -2260,9 +2260,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 
 .special_event {
-    width: 50%;
+    &-container & {
+        width: 50%;
 
-    @media screen and (max-width: 48em) { width: 100%; }
+        @media screen and (max-width: 48em) { width: 100%; }
+    }
 }
 
 .convention {

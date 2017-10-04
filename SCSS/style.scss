@@ -2260,7 +2260,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 }
 
-.sponsor-container .sponsor {
+#related-sponsors div.sponsor {
     width: 50%;
 
     @media screen and (max-width: 48em) { width: 100%; }
@@ -2400,7 +2400,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
     li { margin-bottom: 0.5em; }
 }
 
-.related-sponsors {
+h3.related-sponsors {
     text-align: center;
     margin-bottom: 0;
 }

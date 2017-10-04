@@ -2258,6 +2258,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 }
 
+.sponsor-container .sponsor {
+    width: 50%;
+
+    @media screen and (max-width: 48em) { width: 100%; }
+}
 
 .special_event {
     &-container & {

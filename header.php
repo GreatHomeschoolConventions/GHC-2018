@@ -48,9 +48,9 @@
      */
     if ( ( is_single() || ( is_page() && ! twentyseventeen_is_frontpage() ) ) && has_post_thumbnail( get_queried_object_id() ) ) :
         echo '<div class="single-featured-image-header">';
-        if ( 'location' == get_post_type() ) {
+        if ( 'location' === get_post_type() ) {
             the_title( '<h1 class="entry-title" style="background-image: url(\'' . get_the_post_thumbnail_url( get_queried_object_id(), 'twentyseventeen-featured-image' ). '\');">', '</h1>' );
-        } else {
+        } elseif ( 'speaker' !== get_post_type() ) {
             echo get_the_post_thumbnail( get_queried_object_id(), 'twentyseventeen-featured-image' );
         }
         echo '</div><!-- .single-featured-image-header -->';

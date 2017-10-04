@@ -489,13 +489,15 @@ blockquote {
     margin: 0;
     overflow: hidden;
     padding: 0;
-}
 
-blockquote cite {
-    display: block;
-    font-style: normal;
-    font-weight: 600;
-    margin-top: 0.5em;
+    em { font-style: normal; }
+
+    cite {
+        display: block;
+        font-style: normal;
+        font-weight: 600;
+        margin-top: 0.5em;
+    }
 }
 
 address {

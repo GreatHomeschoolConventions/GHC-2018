@@ -127,7 +127,7 @@ mark {
 }
 
 small,
-.small, 
+.small,
 .smaller {
     font-size: 80%;
 }
@@ -2319,8 +2319,11 @@ body:not(.twentyseventeen-front-page) .entry-header {
         display: flex;
         flex-wrap: wrap;
 
-        article:nth-last-child(n+2), article:nth-last-child(n+2) ~ article {
-            @media screen and (min-width: 48em) { width: 50%; }
+        @media screen and (min-width: 48em) {
+            article:nth-last-child(n+2), article:nth-last-child(n+2) ~ article {
+                width: calc(50% - 2em);
+            }
+            article:first-child { margin-right: 2em; }
         }
     }
 

@@ -948,16 +948,6 @@ a .nav-title,
     box-shadow: inset 0 -1px 0;
 }
 
-/* Fixes linked images */
-.entry-content a img,
-.widget a img {
-    box-shadow: 0 0 0 8px;
-}
-
-.product-thumbnail a img {
-    box-shadow: none;
-}
-
 .post-navigation a:focus .icon,
 .post-navigation a:hover .icon {
     color: #222;

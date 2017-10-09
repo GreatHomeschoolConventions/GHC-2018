@@ -4582,5 +4582,7 @@ body div#ui-datepicker-div[style] {
         box-shadow: 0px 0px 0px 0px rgba( 2, 2, 2, 0.23);
         text-shadow: 0px 0px 0px rgba( 0, 0, 0, 0.23);
         background-color: $theme-blue;
+
+        &:active, &:focus, &:hover { background-color: $body-text-color; }
     }
 }

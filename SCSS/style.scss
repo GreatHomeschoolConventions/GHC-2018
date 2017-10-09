@@ -799,6 +799,17 @@ input[type="submit"].secondary:focus {
     }
 }
 
+.theme.bg.cta .button[href*="register"] {
+    background-color: #c50000;
+
+    .location-california &, .location-missouri & { background-color: $body-text-color; }
+}
+
+.cta-red a {
+    color: #c50000;
+    font-weight: 700;
+}
+
 hr {
     background-color: #bbb;
     border: 0;

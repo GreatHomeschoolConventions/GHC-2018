@@ -13,6 +13,16 @@ function ghc_2018_minified_css() {
 }
 add_action( 'wp_enqueue_scripts', 'ghc_2018_minified_css', 5 );
 
+/**
+ * Remove Popup Maker stylesheet
+ *
+ * Should already be removed via plugin settings, but this will make sure
+ */
+function ghc_2018_popup_css() {
+    wp_dequeue_style( 'popup-maker-site' );
+}
+add_action( 'wp_enqueue_scripts', 'ghc_2018_popup_css', 15 );
+
 function ghc_2018_featured_speaker_bio( $content ) {
     if ( 'speaker' === get_post_type() && has_post_thumbnail() ) {
         $content = get_the_post_thumbnail( get_the_ID(), 'square-thumb', array( 'class' => 'alignright' ) ) . $content;

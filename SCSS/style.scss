@@ -806,8 +806,10 @@ input[type="submit"].secondary:focus {
 }
 
 .cta-red a {
-    color: #c50000;
-    font-weight: 700;
+    &, .navigation-top & {
+        color: #c50000;
+        font-weight: 700;
+    }
 }
 
 hr {

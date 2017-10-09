@@ -2426,7 +2426,17 @@ h3.related-sponsors {
     }
 }
 
+.type-hotel {
+    position: relative;
 
+    .convention-link {
+        text-align: right;
+        position: absolute;
+        top: .33em;
+
+        svg { width: 100%; }
+    }
+}
 
 /*--------------------------------------------------------------
 13.9 Custom Taxonomies

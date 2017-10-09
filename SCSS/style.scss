@@ -2252,10 +2252,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
     }
 }
 
-#related-sponsors div.sponsor {
-    width: 50%;
+#related-sponsors {
+    clear: both;
 
-    @media screen and (max-width: 48em) { width: 100%; }
+    div.sponsor {
+        width: 50%;
+
+        @media screen and (max-width: 48em) { width: 100%; }
+    }
 }
 
 .special_event {

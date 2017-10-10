@@ -22,7 +22,7 @@
 
             if ( $description || is_customize_preview() ) :
             ?>
-                <p class="site-description"><?php echo $description; ?></p>
+                <p class="site-description"><?php echo $description; ?> | <a href="https://www.ncll.org"  target="_blank" rel="noopener">an NCLL event</a></p>
             <?php endif; ?>
         </div><!-- .site-branding-text -->
 

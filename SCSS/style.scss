@@ -1241,6 +1241,7 @@ body {
 .site-branding a {
     text-decoration: none;
     transition: opacity 0.2s;
+    color: inherit;
 }
 
 .site-branding a:hover,

@@ -11,21 +11,22 @@
 ?>
 <section class="tagline">
     <div class="wrap full">
-        <article class="educate">
-            <h2>Educate</h2>
-            <p>Respected speakers <strong>educate</strong> you for the homeschool journey.</p>
-        </article>
         <article class="encourage">
-            <h2>Encourage</h2>
-            <p>Grace-filled families <strong>encourage</strong> you to continue.</p>
+            <h2>Encouraging!</h2>
+            <p>Grace-filled families <strong>encourage</strong> you to continue!</p>
         </article>
         <article class="equip">
-            <h2>Equip</h2>
-            <p>Comprehensive curriculum choices <strong>equip</strong> you to be the best.</p>
+            <h2>Equipping!</h2>
+            <p>Comprehensive curriculum choices <strong>equip</strong> you to be the best!</p>
+        </article>
+        <article class="energize">
+            <h2>Energizing!</h2>
+            <p>Speakers and workshops <strong>energize</strong> you to keep on going!</p>
         </article>
     </div>
     <article class="fun">
         <h2>Fun!!!</h2>
+        <p>Nationally-recognized special events are fun for the whole family!</p>
     </article>
 </section>
 <section class="locations-map">

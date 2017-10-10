@@ -2434,6 +2434,8 @@ h3.related-sponsors {
         position: absolute;
         top: .33em;
 
+        &, &:hover { box-shadow: none; }
+
         svg { width: 100%; }
     }
 }

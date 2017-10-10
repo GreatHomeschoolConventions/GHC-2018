@@ -484,13 +484,14 @@ i {
 
 blockquote {
     color: #666;
-    font-size: 18px;
     font-size: 1.125rem;
     font-style: italic;
     line-height: 1.7;
-    margin: 0;
+    margin: 0 0 1.5em;
+    border-left: .3em solid lighten($body-text-color, 50%);
     overflow: hidden;
-    padding: 0;
+    padding: 0 0 0 1em;
+    position: relative;
 
     em { font-style: normal; }
 
@@ -500,6 +501,8 @@ blockquote {
         font-weight: 600;
         margin-top: 0.5em;
     }
+
+    p:last-child { margin-bottom: 0; }
 }
 
 address {

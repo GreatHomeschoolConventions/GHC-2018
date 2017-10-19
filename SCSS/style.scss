@@ -2183,12 +2183,29 @@ body:not(.twentyseventeen-front-page) .entry-header {
         justify-content: center;
     }
 
+    [class*="container"].shortcode {
+        width: 100%;
+
+        @media screen and (min-width: 30em) {
+            &[class*="align"] { max-width: 50%; }
+
+            &:not([class*="align"]) .speaker { width: 33%; }
+        }
+
+        h2 { font-size: 1.5rem; }
+    }
+
+    [class*="container"].shortcode & {
+        width: 100%;
+        text-align: center;
+    }
+
     [class*="container"] & {
         box-sizing: border-box;
         padding: 1em;
         margin-bottom: 2em;
 
-        @media screen and (min-widtH: 30em) { padding: 2em; }
+        @media screen and (min-width: 30em) { padding: 2em; }
     }
 }
 
@@ -2882,6 +2899,7 @@ object {
     max-width: 100%;
 }
 
+.speaker-container .wp-post-image,
 .speaker .wp-post-image,
 .wp-user-avatar {
     border-radius: 50%;

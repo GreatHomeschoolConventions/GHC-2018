@@ -2355,6 +2355,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
                 width: calc(50% - 2em);
             }
             article:first-child { margin-right: 2em; }
+            article.featured-video {
+                width: 100% !important;
+
+                iframe {
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
         }
     }
 

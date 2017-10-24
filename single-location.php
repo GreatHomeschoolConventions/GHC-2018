@@ -69,6 +69,12 @@ get_header(); ?>
                             ' . get_field( 'hours' ) . '
                         </article>';
                     }
+
+                    if ( get_field( 'featured_video' ) ) {
+                        echo '<article class="featured-video">
+                            ' . wp_oembed_get( get_field( 'featured_video' ) ) . '
+                        </article>';
+                    }
                     ?>
                 </div>
             </div>

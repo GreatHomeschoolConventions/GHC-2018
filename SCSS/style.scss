@@ -1576,6 +1576,13 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
         text-align: center;
 
         * { color: white; }
+
+        .button.all-speakers {
+            background-color: $theme-orange;
+            color: white;
+
+            &:hover, &:focus, &:active { background-color: $body-text-color; }
+        }
     }
 
     .sponsors {

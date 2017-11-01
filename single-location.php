@@ -88,7 +88,7 @@ get_header(); ?>
             <div id="special-events" class="theme bg">
                 <article class="wrap">
                     <h2>Special Events</h2>
-                    <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt" image_size="special-event-large"]' ); ?>
+                    <?php echo do_shortcode( '[special_event_grid convention="' . $convention_abbreviation . '" show="name,image,excerpt,bio" image_size="special-event-large"]' ); ?>
                 </article>
             </div>
 
@@ -101,7 +101,7 @@ get_header(); ?>
             <div id="speakers" class="theme bg">
                 <article class="wrap">
                     <h2>Featured Speakers</h2>
-                    <?php echo do_shortcode( '[speaker_grid convention="' . $convention_abbreviation . '" show="name,image" image_size="square-thumb"]' ); ?>
+                    <?php echo do_shortcode( '[speaker_grid convention="' . $convention_abbreviation . '" show="name,image,bio" image_size="square-thumb"]' ); ?>
                 </article>
             </div>
 

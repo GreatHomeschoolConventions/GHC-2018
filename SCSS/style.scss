@@ -6,6 +6,7 @@ $theme-magenta:         #b12278;
 $theme-teal:            #0c7f84;
 $theme-gray:            #dddddd;
 $body-text-color:       #333333;
+$cta-red:               #c50000;
 
 $excluded-color:        #CC2631;
 $included-color:        #58862D;
@@ -812,15 +813,24 @@ input[type="submit"].secondary:focus {
 }
 
 .theme.bg.cta .button[href*="register"] {
-    background-color: #c50000;
+    background-color: $cta-red;
 
     .location-california &, .location-missouri & { background-color: $body-text-color; }
 }
 
 .cta-red a {
-    &, .navigation-top & {
-        color: #c50000;
-        font-weight: 700;
+    color: $cta-red;
+    font-weight: 700;
+
+    .navigation-top & {
+        background-color: $cta-red;
+        color: white !important;
+        transition: all .2s ease;
+
+        &:hover {
+            background-color: darken($cta-red, 10);
+            color: white;
+        }
     }
 }
 
@@ -1086,7 +1096,7 @@ a .nav-title,
 
 .main-navigation a {
     display: block;
-    padding: 0.5em 0;
+    padding: 0.5em;
     text-decoration: none;
 }
 
@@ -3646,7 +3656,7 @@ img.size-200x-1[src*="svg"] {
     .navigation-top .wrap {
         max-width: 1000px;
         /* The font size is 14px here and we need 50px padding in ems */
-        padding: 0.75em 3.4166666666667em;
+        padding: 0 3.4166666666667em;
     }
 
     .navigation-top nav {
@@ -3705,7 +3715,7 @@ img.size-200x-1[src*="svg"] {
     }
 
     .main-navigation a {
-        padding: 1em 1.25em;
+        padding: 1.75em 1.25em;
     }
 
     .main-navigation ul ul {
@@ -4249,7 +4259,7 @@ img.size-200x-1[src*="svg"] {
 
     /* Navigation */
     .navigation-top .wrap {
-        padding: 0.75em 2em;
+        padding: 0 2em;
     }
 
     .navigation-top nav {

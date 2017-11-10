@@ -2199,36 +2199,35 @@ body:not(.twentyseventeen-front-page) .entry-header {
 13.7 Speakers
 --------------------------------------------------------------*/
 
-.hotel,
-.speaker,
-.special_event,
-.sponsor,
-.workshop,
-.special-track {
-    &-container {
+.ghc-cpt {
+    &.container {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    [class*="container"].shortcode {
+    &.container.shortcode {
         width: 100%;
 
         @media screen and (min-width: 30em) {
             &[class*="align"] { max-width: 50%; }
 
-            &:not([class*="align"]) .speaker { width: 33%; }
+            &:not([class*="align"]) .speaker {
+                width: 25%;
+
+                &:nth-last-child(n+3), &:nth-last-child(n+3) ~ & { padding: 1em; }
+            }
         }
 
         h2 { font-size: 1.5rem; }
     }
 
-    [class*="container"].shortcode & {
+    &.container.shortcode & {
         width: 100%;
         text-align: center;
     }
 
-    [class*="container"] & {
+    &.container & {
         box-sizing: border-box;
         padding: 1em;
         margin-bottom: 2em;
@@ -2239,6 +2238,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 .exhibitor-container {
     &.list {
+        display: block;
         list-style-type: none;
         column-count: 2;
         column-gap: 1em;

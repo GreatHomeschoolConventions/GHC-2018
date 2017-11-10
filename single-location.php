@@ -121,9 +121,9 @@ get_header(); ?>
                     $special_tracks = get_categories( $special_tracks_tax_args );
 
                     if ( $special_tracks ) {
-                        echo '<div class="special-track-container">';
+                        echo '<div class="special-track-container ghc-cpt container">';
                         foreach ( $special_tracks as $track ) {
-                            echo '<article class="special-track ' . $track->slug . '">';
+                            echo '<article class="ghc-cpt item special-track ' . $track->slug . '">';
                             if ( get_field( 'featured_image', $track ) ) {
                                 echo '<a class="track-link" href="' . get_term_link( $track ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>';
                             }

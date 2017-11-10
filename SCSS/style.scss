@@ -2215,7 +2215,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
             &:not([class*="align"]) .speaker {
                 width: 25%;
 
-                &:nth-last-child(n+3), &:nth-last-child(n+3) ~ & { padding: 1em; }
+                &:nth-last-child(n+4), &:nth-last-child(n+4) ~ .ghc-cpt.item { padding: 1em; }
             }
         }
 

@@ -7,6 +7,7 @@ $theme-teal:            #0c7f84;
 $theme-gray:            #dddddd;
 $body-text-color:       #333333;
 $cta-red:               #c50000;
+$sale-green:            #008000;
 
 $excluded-color:        #CC2631;
 $included-color:        #58862D;
@@ -2411,6 +2412,25 @@ body:not(.twentyseventeen-front-page) .entry-header {
             * { color: white; }
         }
         &:nth-child(even) { background-color: $theme-gray; }
+
+        .price {
+            del, ins { padding: 0.25em; }
+
+            del {
+                background-color: white;
+
+                &, * {
+                    color: $cta-red !important;
+                }
+            }
+            ins {
+                background-color: lighten( $sale-green, 70 );
+
+                &, * {
+                    color: $sale-green !important;
+                }
+            }
+        }
     }
 
     &.location-southeast {

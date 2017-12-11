@@ -2569,6 +2569,39 @@ body:not(.twentyseventeen-front-page) .entry-header {
     line-height: 15px;
 }
 
+.product-type-gift-card {
+    .gift-card-content-editor .gift-card-content-editor input {
+        width: 100%;
+
+        &[type="button"],
+        &#ywgc-postdated { width: initial; }
+    }
+
+    .add-recipient.button {
+        color: white;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .ywgc-remove-recipient {
+        background-color: $theme-orange;
+        color: white;
+        font-weight: 700;
+        font-size: 90%;
+        font-stretch: condensed;
+        text-decoration: none;
+        border-radius: 50%;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+
+        &:hover {
+            background-color: darken($theme-orange, 10%);
+            box-shadow: none;
+        }
+    }
+}
+
 /*--------------------------------------------------------------
 13.9 Price Sheets
 --------------------------------------------------------------*/

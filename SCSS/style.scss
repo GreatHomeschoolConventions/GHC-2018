@@ -2325,6 +2325,15 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
         @media screen and (max-width: 48em) { width: 100%; }
     }
+
+    .sponsor-container.show-content-1 div.sponsor {
+        width: 100%;
+
+        &:nth-of-type(even) {
+            background-color: $theme-gray;
+            padding: 2em;
+        }
+    }
 }
 
 .special_event {
@@ -3071,7 +3080,7 @@ object {
 }
 
 .speaker-container .wp-post-image,
-.speaker .wp-post-image,
+.speaker .wp-post-image:not(.sponsor),
 .wp-user-avatar {
     border-radius: 50%;
 }

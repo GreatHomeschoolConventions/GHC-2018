@@ -2209,6 +2209,8 @@ body:not(.twentyseventeen-front-page) .entry-header {
     &.container.shortcode {
         width: 100%;
 
+        &.aligninline { display: inline-block; }
+
         @media screen and (min-width: 30em) {
             &[class*="align"] { max-width: 50%; }
 

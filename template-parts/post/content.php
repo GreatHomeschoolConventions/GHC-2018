@@ -47,9 +47,16 @@
     </header><!-- .entry-header -->
 
     <?php if ( '' !== get_the_post_thumbnail() && ! is_single() ) : ?>
+        <?php
+        if ( 'speaker' === get_post_type() ) {
+            $thumbnail_size = 'square-medium';
+        } else {
+            $thumbnail_size = 'twentyseventeen-featured-image';
+        }
+        ?>
         <div class="post-thumbnail">
             <a href="<?php the_permalink(); ?>">
-                <?php the_post_thumbnail( 'twentyseventeen-featured-image' ); ?>
+                <?php the_post_thumbnail( $thumbnail_size ); ?>
             </a>
         </div><!-- .post-thumbnail -->
     <?php endif; ?>

@@ -61,6 +61,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                 for="ywgc-postdated"><input type="checkbox" id="ywgc-postdated" name="ywgc-postdated"> <?php echo apply_filters('ywgc_postdated_field_label',__( "Schedule delivery?", 'yith-woocommerce-gift-cards' )); ?></label>
             <input type="text" id="ywgc-delivery-date" name="ywgc-delivery-date"
                    class="datepicker ywgc-hidden" placeholder="<?php echo apply_filters( 'ywgc_choose_delivery_date_placeholder',__( 'Choose the delivery date (year-month-day)', 'yith-woocommerce-gift-cards' )); ?>">
+            <p>Please note that our <a href="<?php home_url( '/pricing/' ); ?>">prices do go up each month</a>, so if you purchase a gift card for this month&rsquo;s amount but the recipient doesn&rsquo;t use it until next month, it may not cover their entire order.</p>
         </div>
     <?php endif; ?>
 </div>

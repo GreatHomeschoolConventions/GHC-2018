@@ -37,6 +37,8 @@ module.exports = function (grunt) {
             },
             options: {
                 watchTask: true,
+                open: "external",
+                host: "andrews-macbook-pro.local",
                 proxy: "https://ghc.dev",
                 https: {
                     key: "/Users/andrew/github/dotfiles/local-dev.key",

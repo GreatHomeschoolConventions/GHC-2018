@@ -1,17 +1,44 @@
 <?php
 
-CONST GHC_THEME_VERSION = '3.1.8';
+CONST GHC_THEME_VERSION = '3.2.0';
 
 /**
  * Add minified stylesheet, webfonts, and other custom assets
  */
 function ghc_2018_minified_css() {
-    wp_enqueue_style( 'local-webfonts', 'https://cdn.greathomeschoolconventions.com/fonts/league-gothic-normal.css' );
-    wp_enqueue_style( 'google-webfonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i' );
     wp_enqueue_style( 'twentyseventeen-style', get_stylesheet_directory_uri() . '/style.min.css', array(), GHC_THEME_VERSION );
-    wp_enqueue_style( 'dashicons' );
+    wp_enqueue_style( 'dashicons' ); ?>
+
+    <script>
+        WebFontConfig = {
+            custom: {
+                families: ['league_gothicregular', 'league_gothicitalic'],
+                urls: ['https://cdn.greathomeschoolconventions.com/fonts/league-gothic-normal.css']
+            },
+            google: {
+                families: ['Open Sans:400,400i,700,700i', 'Libre Franklin:300,300i,400,400i,600,600i,800,800i']
+            }
+        };
+
+        (function(d) {
+            var wf = d.createElement('script'), s = d.scripts[0];
+            wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js';
+            wf.async = true;
+            s.parentNode.insertBefore(wf, s);
+        })(document);
+    </script>
+
+    <?php
 }
 add_action( 'wp_enqueue_scripts', 'ghc_2018_minified_css', 5 );
+
+/**
+ * Dequeue parent theme font stylesheet
+ */
+function ghc_2018_fonts() {
+    wp_dequeue_style( 'twentyseventeen-fonts' );
+}
+add_action( 'wp_enqueue_scripts', 'ghc_2018_fonts', 15 );
 
 /**
  * Remove Popup Maker stylesheet

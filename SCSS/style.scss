@@ -15,7 +15,8 @@ $unavailable-color:     #DCDCDC;
 $individual-color:      #E6E7F7;
 $family-color:          #FFF9CF;
 
-$header-font-family:    "League Gothic", "league_gothicregular", "Helvetica Neue", Arial, sans-serif;
+$header-font-family:    "league_gothicregular", "Helvetica Neue", helvetica, Arial, sans-serif;
+$header-font-family-em: "league_gothicitalic";
 $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-serif;
 
 /*--------------------------------------------------------------
@@ -422,12 +423,24 @@ h4,
 h5,
 h6 {
     font-family: $header-font-family;
+    font-weight: 700;
     clear: both;
     line-height: 1.4;
     margin: 0 0 0.75em;
     padding: 1.5em 0 0;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    .wf-leaguegothicregular-n4-active {
+        font-weight: 400;
+    }
+
+    em {
+        .wf-leaguegothicitalic-n4-active & {
+            font-family: $header-font-family-em;
+            font-style: normal;
+        }
+    }
 }
 
 h1:first-child,
@@ -441,13 +454,11 @@ h6:first-child {
 
 h1 {
     font-size: 2.5rem;
-    font-weight: 300;
 }
 
 h2 {
     color: #666;
     font-size: 2.25rem;
-    font-weight: 300;
 
     + h3 { padding-top: 0; }
 }
@@ -455,19 +466,16 @@ h2 {
 h3 {
     color: $body-text-color;
     font-size: 1.875rem;
-    font-weight: 300;
 }
 
 h4 {
     color: $body-text-color;
     font-size: 1.75rem;
-    font-weight: 800;
 }
 
 h5 {
     color: #767676;
     font-size: 1.5rem;
-    font-weight: 800;
     letter-spacing: 0.15em;
     text-transform: uppercase;
 }
@@ -475,7 +483,6 @@ h5 {
 h6 {
     color: $body-text-color;
     font-size: 1.5rem;
-    font-weight: 800;
 }
 
 p {

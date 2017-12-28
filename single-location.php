@@ -182,7 +182,7 @@ get_header(); ?>
             <div id="hotels" class="theme bg">
                 <article class="wrap">
                     <h2>Discounted Hotels</h2>
-                    <?php echo do_shortcode( '[hotel_grid convention="' . $convention_abbreviation . '"]' ); ?>
+                    <?php echo do_shortcode( '[hotel_grid convention="' . $convention_abbreviation . '" show_content="true"]' ); ?>
                 </article>
             </div>
 

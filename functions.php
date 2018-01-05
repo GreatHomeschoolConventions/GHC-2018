@@ -1,6 +1,6 @@
 <?php
 
-CONST GHC_THEME_VERSION = '3.2.2';
+CONST GHC_THEME_VERSION = '3.2.3';
 
 /**
  * Add minified stylesheet, webfonts, and other custom assets

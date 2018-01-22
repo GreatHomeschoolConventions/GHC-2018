@@ -34,7 +34,7 @@
         background-color: yellow;
     }
     .order_item td { border: 1px solid black !important; }
-    #template_header_image, #template_header h1, #template_footer, table[style*="background-color:#00456a"], tfoot tr:nth-child(2) { display: none !important; }
+    #template_header_image, #template_header h1, #template_footer, table[style*="background-color:#00456a"] { display: none !important; }
 </style>
 
  <p><?php printf( __( 'You have received an order from <span class="highlighted">%s</span>. The order is as follows:', 'woocommerce' ), $order->get_formatted_billing_full_name() ); ?></p>

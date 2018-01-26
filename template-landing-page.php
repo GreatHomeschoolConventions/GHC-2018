@@ -38,4 +38,11 @@ get_header(); ?>
     </div><!-- #primary -->
 </div><!-- .wrap -->
 
-<?php get_footer();
+<?php
+
+/**
+ * Remove sidebars
+ */
+add_filter( 'is_active_sidebar', '__return_false' );
+
+get_footer();

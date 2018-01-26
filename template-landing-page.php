@@ -10,7 +10,18 @@
  * @version 1.0
  */
 
-get_header(); ?>
+get_header();
+
+if ( get_field( 'background_image' ) ) { ?>
+    <style type="text/css">
+        .site-content-contain {
+            background-image: url('<?php the_field( 'background_image' ); ?>');
+        }
+    </style>
+<?php
+}
+
+?>
 
 <div class="wrap">
     <div id="primary" class="content-area">

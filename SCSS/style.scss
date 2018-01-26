@@ -45,6 +45,7 @@ $body-font-family:      "Open Sans", "Helvetica Neue", helvetica, arial, sans-se
    13.8 Custom Taxonomies
    13.9 WooCommerce
    13.10 Price Sheets
+   13.11 Landing Pages
 14.0 Comments
 15.0 Widgets
 16.0 Media
@@ -2700,6 +2701,58 @@ table.price-sheet {
                 font-size: 14px;
                 font-weight: 500;
             }
+        }
+    }
+}
+
+
+/*--------------------------------------------------------------
+13.9 Landing Pages
+--------------------------------------------------------------*/
+
+.page.page-template-template-landing-page {
+    .site-branding { display: none; }
+
+    .site-content-contain {
+        background-size: cover;
+        background-attachment: fixed;
+    }
+
+    .site-content {
+        width: 90%;
+        margin: 0 auto;
+        background-color: rgba($theme-blue, 0.95);
+        box-shadow: 0 0 10px rgba(0,0,0,0.75);
+
+        @media screen and (min-width: 37.5em) { width: 75%; }
+        @media screen and (min-width: 50em) { width: 50%; }
+
+        * { color: white; }
+
+        .entry-title {
+            text-transform: none;
+            color: white;
+        }
+    }
+
+    .entry-header {
+        margin-bottom: 0 !important;
+    }
+
+    h2, h3 {
+        margin-bottom: 24px;
+        padding-top: 0;
+    }
+
+    img.size-full {
+        margin-left: -2em;
+        margin-right: -2em;
+        max-width: calc(100% + 4em);
+
+        @media screen and (min-width: 48em) {
+            margin-left: -3em;
+            margin-right: -3em;
+            max-width: calc(100% + 6em);
         }
     }
 }

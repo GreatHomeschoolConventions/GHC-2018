@@ -110,6 +110,12 @@ get_header(); ?>
                                     'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
                                     'after'  => '</div>',
                                 ) );
+
+                                if ( get_field( 'featured_video' ) ) {
+                                    echo '<article class="featured-video">
+                                        ' . wp_oembed_get( get_field( 'featured_video' ) ) . '
+                                    </article>';
+                                }
                             ?>
                         </div><!-- .entry-content -->
                     </article><!-- #post-## -->
@@ -119,12 +125,6 @@ get_header(); ?>
                         echo '<article class="general-convention-hours">
                             <h2>General Convention Schedule</h2>
                             ' . get_field( 'hours' ) . '
-                        </article>';
-                    }
-
-                    if ( get_field( 'featured_video' ) ) {
-                        echo '<article class="featured-video">
-                            ' . wp_oembed_get( get_field( 'featured_video' ) ) . '
                         </article>';
                     }
                     ?>

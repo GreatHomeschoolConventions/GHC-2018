@@ -2468,6 +2468,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             .dates, .button, input[type="submit"] { color: white; }
         }
+        .feature .dashicons {
+            background-color: $theme-yellow;
+            color: $body-text-color;
+        }
     }
     &.location-midwest {
         .venue, .theme.bg:nth-child(odd) {
@@ -2477,9 +2481,14 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             .dates, .button, input[type="submit"] { color: white; }
         }
+        .feature .dashicons {
+            background-color: $theme-green;
+            color: $body-text-color;
+        }
     }
     &.location-california {
         .venue, .theme.bg:nth-child(odd) { background-color: $theme-orange; }
+        .feature .dashicons { background-color: $theme-orange; }
     }
     &.location-missouri {
         .venue, .theme.bg:nth-child(odd) {
@@ -2491,6 +2500,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
             .button, input[type="submit"] { color: white; }
         }
+        .feature .dashicons { background-color: $theme-magenta; }
     }
 }
 

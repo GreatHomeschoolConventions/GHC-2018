@@ -2388,6 +2388,36 @@ body:not(.twentyseventeen-front-page) .entry-header {
         }
     }
 
+    .ghc-cpt .feature {
+        width: 50%;
+        text-align: center;
+        padding: 1em;
+
+        @media screen and (min-width: 48em) { width: 33%; }
+
+        .dashicons {
+            font-size: 5rem;
+            width: auto;
+            height: auto;
+            padding: 2rem;
+            line-height: 1em;
+            border-radius: 50%;
+            color: $theme-gray;
+        }
+
+        a.icon {
+            display: block;
+            width: 100%;
+            height: auto;
+            box-shadow: none;
+            transition: all .3s ease;
+
+            &:hover, &:active, &:focus { opacity: 0.75; }
+        }
+
+        h3 { padding-top: 0.75em; }
+    }
+
     #content #primary {
         float: none;
         width: 100%;
@@ -2428,6 +2458,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
     &.location-southeast {
         .venue, .theme.bg:nth-child(odd) { background-color: $theme-blue; }
+        .feature .dashicons { background-color: $theme-blue; }
     }
     &.location-texas {
         .venue, .theme.bg:nth-child(odd) {

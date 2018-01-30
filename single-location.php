@@ -48,6 +48,58 @@ get_header(); ?>
             </div>
 
             <div id="features" class="theme bg">
+                <?php if ( get_field( 'feature_icons' ) ) : ?>
+                <div class="wrap ghc-cpt container">
+                    <?php
+                    foreach( get_field( 'feature_icons' ) as $icon ) {
+                        echo '<div class="feature">';
+                            if ( $icon['url'] ) {
+                                echo '<a class="icon" href="' . esc_attr( $icon['url'] ) . '">';
+                            }
+                            if ( $icon['icon_dashicon'] ) {
+                                echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
+                            }
+
+                            if ( $icon['title'] ) {
+                                echo '<h3>';
+                                echo esc_attr( $icon['title'] );
+                                echo '</h3>';
+                            }
+
+                            if ( $icon['url'] ) {
+                                echo '</a>';
+                            }
+
+
+                            if ( $icon['text'] ) {
+                                echo $icon['text'];
+                            }
+                        echo '</div>';
+                    }
+
+                    if ( get_field( 'price_sheet' ) ) {
+                        echo '<div class="feature">
+                            <a class="icon" href="' . esc_attr( get_field( 'price_sheet' ) ) . '">
+                                <span class="dashicons dashicons-tickets-alt"></span>
+                                <h3>Detailed Pricing</h3>
+                            </a>
+                            <p>Detailed price sheet</p>
+                        </div>';
+                    }
+
+                    if ( get_field( 'workshop_schedule' ) ) {
+                        $workshop = get_field( 'workshop_schedule' );
+                        echo '<div class="feature">
+                            <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
+                                <span class="dashicons dashicons-calendar-alt"></span>
+                                <h3>Workshop Schedule</h3>
+                            </a>
+                            <p>Detailed workshop schedule <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>
+                        </div>';
+                    }
+                    ?>
+                </div>
+                <?php endif; ?>
                 <div class="wrap">
                     <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <div class="entry-content">

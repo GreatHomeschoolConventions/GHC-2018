@@ -432,15 +432,8 @@ h6 {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    .wf-leaguegothicregular-n4-active {
-        font-weight: 400;
-    }
-
     em {
-        .wf-leaguegothicitalic-n4-active & {
-            font-family: $header-font-family-em;
-            font-style: normal;
-        }
+        font-family: $header-font-family-em;
     }
 }
 

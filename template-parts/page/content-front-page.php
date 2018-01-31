@@ -36,7 +36,7 @@
 <section class="featured-speakers">
     <div class="wrap">
         <h2>Featured Speakers</h2>
-        <?php echo do_shortcode( '[speaker_grid posts_per_page="12" show="image, name, bio" image_size="150, 150"]' ); ?>
+        <?php echo do_shortcode( '[speaker_grid posts_per_page="12" show="image, name, bio" image_size="square-thumb"]' ); ?>
         <p><a class="button all-speakers" href="<?php echo home_url(); ?>/speakers/">View All Featured Speakers&rarr;</a></p>
     </div>
 </section>

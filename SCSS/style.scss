@@ -2396,13 +2396,18 @@ body:not(.twentyseventeen-front-page) .entry-header {
         @media screen and (min-width: 48em) { width: 33%; }
 
         .dashicons {
-            font-size: 5rem;
+            font-size: 3rem;
             width: auto;
             height: auto;
-            padding: 2rem;
+            padding: 1rem;
             line-height: 1em;
             border-radius: 50%;
             color: $theme-gray;
+
+            @media screen and (min-width: 30em) {
+                font-size: 5rem;
+                padding: 2rem;
+            }
         }
 
         a.icon {

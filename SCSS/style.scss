@@ -575,6 +575,12 @@ blockquote:after {
     outline: none;
 }
 
+.lowercase {
+    text-transform: lowercase;
+
+    .entry-meta & { letter-spacing: initial; }
+}
+
 /*--------------------------------------------------------------
 6.0 Forms
 --------------------------------------------------------------*/

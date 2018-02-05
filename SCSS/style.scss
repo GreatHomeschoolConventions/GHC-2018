@@ -2766,7 +2766,7 @@ table.price-sheet {
         @media screen and (min-width: 37.5em) { width: 75%; }
         @media screen and (min-width: 50em) { width: 50%; }
 
-        * { color: white; }
+        *:not(input) { color: white; }
 
         .entry-title {
             text-transform: none;

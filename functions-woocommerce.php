@@ -26,4 +26,3 @@ function ghc_locations_stripe( $info_text = 'More Information&rarr;' ) {
     <?php
     return ob_get_clean();
 }
-

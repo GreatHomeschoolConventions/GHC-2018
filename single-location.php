@@ -75,6 +75,17 @@ get_header(); ?>
                                 echo $icon['text'];
                             }
                         echo '</div>';
+
+                        if ( strpos( $icon['title'], 'Workshop' ) !== false && get_field( 'workshop_schedule' ) ) {
+                            $workshop = get_field( 'workshop_schedule' );
+                            echo '<div class="feature">
+                                <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
+                                    <span class="dashicons dashicons-calendar-alt"></span>
+                                    <h3>Workshop Schedule</h3>
+                                </a>
+                                <p>Detailed workshop schedule <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>
+                            </div>';
+                        }
                     }
 
                     if ( get_field( 'price_sheet' ) ) {
@@ -84,17 +95,6 @@ get_header(); ?>
                                 <h3>Detailed Pricing</h3>
                             </a>
                             <p>Detailed price sheet</p>
-                        </div>';
-                    }
-
-                    if ( get_field( 'workshop_schedule' ) ) {
-                        $workshop = get_field( 'workshop_schedule' );
-                        echo '<div class="feature">
-                            <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
-                                <span class="dashicons dashicons-calendar-alt"></span>
-                                <h3>Workshop Schedule</h3>
-                            </a>
-                            <p>Detailed workshop schedule <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>
                         </div>';
                     }
                     ?>

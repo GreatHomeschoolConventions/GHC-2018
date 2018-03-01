@@ -70,9 +70,9 @@ get_header(); ?>
                          * Workshop descriptions or everything else
                          */
                         $workshop_descriptions = get_field( 'workshop_descriptions' );
-                        if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop_descriptions['link'] ) ) {
+                        if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop_descriptions['url'] ) ) {
                             echo '<div class="feature">
-                                <a class="icon" href="' . esc_attr( $workshop_descriptions['link'] ) . '" target="' . $workshop_descriptions['target'] . '">
+                                <a class="icon" href="' . esc_attr( $workshop_descriptions['url'] ) . '" target="' . $workshop_descriptions['target'] . '">
                                     <span class="dashicons dashicons-welcome-learn-more"></span>
                                     <h3>Workshop Descriptions</h3>
                                 </a>

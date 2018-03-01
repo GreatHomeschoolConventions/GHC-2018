@@ -52,32 +52,11 @@ get_header(); ?>
                 <div class="wrap ghc-cpt container">
                     <?php
                     foreach( get_field( 'feature_icons' ) as $icon ) {
-                        echo '<div class="feature">';
-                            if ( $icon['url'] ) {
-                                echo '<a class="icon" href="' . esc_attr( $icon['url'] ) . '">';
-                            }
-                            if ( $icon['icon_dashicon'] ) {
-                                echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
-                            }
-
-                            if ( $icon['title'] ) {
-                                echo '<h3>';
-                                echo esc_attr( $icon['title'] );
-                                echo '</h3>';
-                            }
-
-                            if ( $icon['url'] ) {
-                                echo '</a>';
-                            }
-
-
-                            if ( $icon['text'] ) {
-                                echo $icon['text'];
-                            }
-                        echo '</div>';
-
-                        if ( strpos( $icon['title'], 'Workshop' ) !== false && get_field( 'workshop_schedule' ) ) {
-                            $workshop = get_field( 'workshop_schedule' );
+                        /*
+                         * Workshop schedule
+                         */
+                        $workshop = get_field( 'workshop_schedule' );
+                        if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop['link'] ) ) {
                             echo '<div class="feature">
                                 <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
                                     <span class="dashicons dashicons-calendar-alt"></span>
@@ -85,6 +64,44 @@ get_header(); ?>
                                 </a>
                                 <p>Detailed workshop schedule <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>
                             </div>';
+                        }
+
+                        /*
+                         * Workshop descriptions or everything else
+                         */
+                        $workshop_descriptions = get_field( 'workshop_descriptions' );
+                        if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop_descriptions['link'] ) ) {
+                            echo '<div class="feature">
+                                <a class="icon" href="' . esc_attr( $workshop_descriptions['link'] ) . '" target="' . $workshop_descriptions['target'] . '">
+                                    <span class="dashicons dashicons-welcome-learn-more"></span>
+                                    <h3>Workshop Descriptions</h3>
+                                </a>
+                                <p>Detailed workshop descriptions</p>
+                            </div>';
+                        } else {
+                            echo '<div class="feature">';
+                                if ( $icon['url'] ) {
+                                    echo '<a class="icon" href="' . esc_attr( $icon['url'] ) . '">';
+                                }
+                                if ( $icon['icon_dashicon'] ) {
+                                    echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
+                                }
+
+                                if ( $icon['title'] ) {
+                                    echo '<h3>';
+                                    echo esc_attr( $icon['title'] );
+                                    echo '</h3>';
+                                }
+
+                                if ( $icon['url'] ) {
+                                    echo '</a>';
+                                }
+
+
+                                if ( $icon['text'] ) {
+                                    echo $icon['text'];
+                                }
+                            echo '</div>';
                         }
                     }
 
@@ -200,7 +217,18 @@ get_header(); ?>
             <div id="workshops" class="theme bg">
                 <article class="wrap">
                     <h2>Workshops</h2>
-                    <?php echo do_shortcode( '[workshop_list convention="' . $convention_abbreviation . '" posts_per_page="30"]' ); ?>
+                    <?php
+
+                    if ( ! empty( $workshop['link'] ) ) {
+                        echo '<p><a class="button" href="' . esc_attr( $workshop['link'] ) . '">Workshop Schedule</a> <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>';
+                    }
+
+                    if ( ! empty( $workshop_descriptions['url'] ) ) {
+                        echo '<p><a class="button" href="' . esc_attr( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">Workshop Descriptions</a></p>';
+                    }
+
+                    echo do_shortcode( '[workshop_list convention="' . $convention_abbreviation . '" posts_per_page="30"]' );
+                    ?>
                 </article>
             </div>
 

@@ -2673,7 +2673,7 @@ table.price-sheet {
         &:first-child { text-align: left; }
     }
 
-    .excluded, .included, .price, .unavailable {
+    .excluded, .included, .price, .available, .unavailable {
         border: 1px solid $unavailable-color;
     }
 
@@ -2694,6 +2694,13 @@ table.price-sheet {
         border-color: $included-color;
     }
 
+    .available {
+        font-weight: 700;
+        background-color: $family-color;
+        color: $included-color;
+        border-color: $included-color;
+    }
+
     .unavailable { background-color: $unavailable-color; }
 
     .price {
@@ -2706,7 +2713,7 @@ table.price-sheet {
     @media screen and (min-width: 768px) {
         th, td { padding: 13px; }
 
-        .included, .excluded {
+        .included, .excluded, .available {
             vertical-align: middle;
         }
     }
@@ -2730,6 +2737,8 @@ table.price-sheet {
         td {
             width: 33.3%;
 
+            &:not(:last-child) { border-right: none; }
+
             &.price {
                 width: 50%;
                 text-align: left;
@@ -2742,7 +2751,7 @@ table.price-sheet {
                 content: attr(aria-label);
                 display: block;
                 width: 100%;
-                text-align: left;
+                text-align: center;
                 font-size: 14px;
                 font-weight: 500;
             }

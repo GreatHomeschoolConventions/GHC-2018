@@ -17,7 +17,12 @@ function ghc_2018_minified_css() {
             },
             google: {
                 families: ['Open Sans:400,400i,700,700i', 'Libre Franklin:300,300i,400,400i,600,600i,800,800i']
-            }
+            },
+            // World Radio popup ad
+            google: {
+                families: ['Raleway:300,500,700i'],
+                text: 'Busy families rely on Want news reports from a biblical perspective, not a political bias? Don’t simply digest the news; examine it along with us!'
+            },
         };
 
         (function(d) {

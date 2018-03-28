@@ -4939,7 +4939,7 @@ body div#ui-datepicker-div[style] {
         box-shadow: 0 0 50px rgba(0,0,0,0.75);
 
         * {
-            font-family: Raleway, sans-serif;
+            font-family: Raleway;
             color: #070707;
         }
     }
@@ -4949,7 +4949,8 @@ body div#ui-datepicker-div[style] {
         text-align: center;
         margin: 0;
         padding: 0;
-        font-family: RalewayItalic, sans-serif;
+        font-weight: 700;
+        font-style: italic;
     }
 
     img[src*=svg] {

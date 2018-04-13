@@ -4908,11 +4908,11 @@ body div#ui-datepicker-div[style] {
             h3 { padding-top: 1em; }
         }
 
-        .location-southeast & { background-color: $theme-blue; }
-        .location-texas & { background-color: $theme-yellow; * { color: $body-text-color; } }
-        .location-midwest & { background-color: $theme-green; }
-        .location-california & { background-color: $theme-green; }
-        .location-missouri & { background-color: $theme-green; }
+        .location-southeast &, .page-southeast & { background-color: $theme-blue; }
+        .location-texas &, .page-texas & { background-color: $theme-yellow; * { color: $body-text-color; } }
+        .location-midwest &, .page-midwest & { background-color: $theme-green; }
+        .location-california &, .page-california & { background-color: $theme-green; }
+        .location-missouri &, .page-missouri & { background-color: $theme-green; }
     }
 
     .pum-title {

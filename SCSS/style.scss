@@ -924,6 +924,7 @@ a:active {
 .widget a,
 .site-footer .widget-area a,
 .posts-navigation a,
+.pum a,
 .widget_authors a strong {
     box-shadow: inset 0 -1px 0;
     transition: color 80ms ease-in, box-shadow 130ms ease-in-out;
@@ -4898,6 +4899,20 @@ body div#ui-datepicker-div[style] {
         border: 1px none #000000;
         box-shadow: 0px 10px 25px 4px rgba(2, 2, 2, 0.50);
         background-color: white;
+
+        .single-location & {
+            padding: 36px;
+
+            h2, h3 { color: $body-text-color; }
+
+            h3 { padding-top: 1em; }
+        }
+
+        .location-southeast & { background-color: $theme-blue; }
+        .location-texas & { background-color: $theme-yellow; * { color: $body-text-color; } }
+        .location-midwest & { background-color: $theme-green; }
+        .location-california & { background-color: $theme-green; }
+        .location-missouri & { background-color: $theme-green; }
     }
 
     .pum-title {
@@ -4933,6 +4948,8 @@ body div#ui-datepicker-div[style] {
 #popmake-83921 {
     padding: 0;
     background: url('https://cdn.greathomeschoolconventions.com/wp-content/uploads/2018/03/mom-with-stroller.jpg') no-repeat top right / cover;
+
+    a { box-shadow: none; }
 
     .pum-content.popmake-content {
         padding: 2em;

@@ -4899,25 +4899,20 @@ body div#ui-datepicker-div[style] {
         border: 1px none #000000;
         box-shadow: 0px 10px 25px 4px rgba(2, 2, 2, 0.50);
         background-color: white;
+    }
 
-        .single-location &,
-        .page-southeast &,
-        .page-texas &,
-        .page-midwest &,
-        .page-california &,
-        .page-missouri & {
-            padding: 36px;
+    &[data-popmake*="convention-cta-"] .pum-container {
+        padding: 36px;
 
-            h2, h3 { color: $body-text-color; }
+        h2, h3 { color: $body-text-color; }
 
-            h3 { padding-top: 1em; }
-        }
+        h3 { padding-top: 1em; }
 
-        .location-southeast &, .page-southeast & { background-color: $theme-blue; }
-        .location-texas &, .page-texas & { background-color: $theme-yellow; * { color: $body-text-color; } }
-        .location-midwest &, .page-midwest & { background-color: $theme-green; }
-        .location-california &, .page-california & { background-color: $theme-green; }
-        .location-missouri &, .page-missouri & { background-color: $theme-green; }
+        body[class*="southeast"] & { background-color: $theme-blue; }
+        body[class*="texas"] & { background-color: $theme-yellow; * { color: $body-text-color; } }
+        body[class*="midwest"] & { background-color: $theme-green; }
+        body[class*="california"] & { background-color: $theme-green; }
+        body[class*="missouri"] & { background-color: $theme-green; }
     }
 
     .pum-title {

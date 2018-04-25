@@ -1,6 +1,6 @@
 <?php
 
-CONST GHC_THEME_VERSION = '3.2.8';
+define( 'GHC_THEME_VERSION', wp_get_theme()->get( 'Version' ) );
 
 /**
  * Add minified stylesheet, webfonts, and other custom assets

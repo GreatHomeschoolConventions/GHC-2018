@@ -10,14 +10,14 @@
  * happen. When this occurs the version of the template file will be bumped and
  * the readme will list any important changes.
  *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
+ * @see         https://docs.woocommerce.com/document/template-structure/
  * @author WooThemes
  * @package WooCommerce/Templates/Emails/HTML
  * @version 2.5.0
  */
 
  if ( ! defined( 'ABSPATH' ) ) {
-     exit;
+	exit;
  }
 
  /**
@@ -26,15 +26,15 @@
  do_action( 'woocommerce_email_header', $email_heading, $email ); ?>
 
 <style type="text/css">
-    div[style*="padding:70px 0 70px 0"] { padding-top: 0; }
-    #template_header_image img { width: 75px !important; }
-    .highlighted {
-        font-size: larger;
-        font-weight: bold;
-        background-color: yellow;
-    }
-    .order_item td { border: 1px solid black !important; }
-    #template_header_image, #template_header h1, #template_footer, table[style*="background-color:#00456a"] { display: none !important; }
+	div[style*="padding:70px 0 70px 0"] { padding-top: 0; }
+	#template_header_image img { width: 75px !important; }
+	.highlighted {
+		font-size: larger;
+		font-weight: bold;
+		background-color: yellow;
+	}
+	.order_item td { border: 1px solid black !important; }
+	#template_header_image, #template_header h1, #template_footer, table[style*="background-color:#00456a"] { display: none !important; }
 </style>
 
  <p><?php printf( __( 'You have received an order from <span class="highlighted">%s</span>. The order is as follows:', 'woocommerce' ), $order->get_formatted_billing_full_name() ); ?></p>

@@ -1879,9 +1879,10 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .taxonomy-description {
-	color: #666;
-	font-size: 13px;
-	font-size: 0.8125rem;
+	background-clip: $theme-gray;
+	padding: 2em;
+
+	.post-type-archive-exhibitor & .convention-link { display: none; }
 }
 
 /* More tag */
@@ -3654,20 +3655,13 @@ img.size-200x-1[src*="svg"] {
 
 	/* Blog Index, Archive, Search */
 
-	.taxonomy-description {
-		font-size: 14px;
-		font-size: 0.875rem;
-	}
-
 	.page-numbers.current {
-		font-size: 16px;
 		font-size: 1rem;
 	}
 
 	/* Site Footer */
 
 	.site-footer {
-		font-size: 16px;
 		font-size: 1rem;
 	}
 

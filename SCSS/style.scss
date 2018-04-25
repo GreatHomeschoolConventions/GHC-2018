@@ -1879,7 +1879,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 }
 
 .taxonomy-description {
-	background-clip: $theme-gray;
+	background-color: $theme-gray;
 	padding: 2em;
 
 	.post-type-archive-exhibitor & .convention-link { display: none; }

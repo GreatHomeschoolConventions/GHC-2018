@@ -38,10 +38,10 @@ the_post();
 
 					<div id="dates" class="dates">
 						<h2>Dates</h2>
-						<p><?php echo ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ); ?></p>
+						<p><?php echo esc_attr( ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ) ); ?></p>
 						<?php
 						if ( get_field( 'ics_file' ) ) {
-							echo '<p><a class="button" href="' . get_field( 'ics_file' ) . '">Add to my calendar&rarr;</a></p>';
+							echo '<p><a class="button" href="' . esc_url( get_field( 'ics_file' ) ) . '">Add to my calendar&rarr;</a></p>';
 						}
 						?>
 					</div>
@@ -59,12 +59,12 @@ the_post();
 						$workshop = get_field( 'workshop_schedule' );
 						if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop['link'] ) ) {
 							echo '<div class="feature">
-                                <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
-                                    <span class="dashicons dashicons-calendar-alt"></span>
-                                    <h3>Workshop Schedule</h3>
-                                </a>
-                                <p>Detailed workshop schedule <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>
-                            </div>';
+								<a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
+									<span class="dashicons dashicons-calendar-alt"></span>
+									<h3>Workshop Schedule</h3>
+								</a>
+								<p>Detailed workshop schedule <span class="small">(' . ( 'final' === $workshop['status'] ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>
+							</div>';
 						}
 
 						/*
@@ -73,16 +73,16 @@ the_post();
 						$workshop_descriptions = get_field( 'workshop_descriptions' );
 						if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop_descriptions['url'] ) ) {
 							echo '<div class="feature">
-                                <a class="icon" href="' . esc_attr( $workshop_descriptions['url'] ) . '" target="' . $workshop_descriptions['target'] . '">
-                                    <span class="dashicons dashicons-welcome-learn-more"></span>
-                                    <h3>Workshop Descriptions</h3>
-                                </a>
-                                <p>Detailed workshop descriptions</p>
-                            </div>';
+								<a class="icon" href="' . esc_url( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">
+									<span class="dashicons dashicons-welcome-learn-more"></span>
+									<h3>Workshop Descriptions</h3>
+								</a>
+								<p>Detailed workshop descriptions</p>
+							</div>';
 						} else {
 							echo '<div class="feature">';
 								if ( $icon['url'] ) {
-								echo '<a class="icon" href="' . esc_attr( $icon['url'] ) . '">';
+								echo '<a class="icon" href="' . esc_url( $icon['url'] ) . '">';
 								}
 								if ( $icon['icon_dashicon'] ) {
 								echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
@@ -100,7 +100,7 @@ the_post();
 
 
 								if ( $icon['text'] ) {
-								echo $icon['text'];
+								echo esc_attr( $icon['text'] );
 								}
 							echo '</div>';
 						}
@@ -108,12 +108,12 @@ the_post();
 
 					if ( get_field( 'price_sheet' ) ) {
 						echo '<div class="feature">
-                            <a class="icon" href="' . esc_attr( get_field( 'price_sheet' ) ) . '">
-                                <span class="dashicons dashicons-tickets-alt"></span>
-                                <h3>Detailed Pricing</h3>
-                            </a>
-                            <p>Detailed price sheet</p>
-                        </div>';
+							<a class="icon" href="' . esc_attr( get_field( 'price_sheet' ) ) . '">
+								<span class="dashicons dashicons-tickets-alt"></span>
+								<h3>Detailed Pricing</h3>
+							</a>
+							<p>Detailed price sheet</p>
+						</div>';
 					}
 					?>
 				</div>
@@ -133,8 +133,8 @@ the_post();
 
 								if ( get_field( 'featured_video' ) ) {
 								echo '<article class="featured-video">
-                                        ' . wp_oembed_get( get_field( 'featured_video' ) ) . '
-                                    </article>';
+										' . wp_oembed_get( esc_url( get_field( 'featured_video' ) ) ) . '
+									</article>';
 								}
 							?>
 						</div><!-- .entry-content -->
@@ -143,9 +143,9 @@ the_post();
 					<?php
 					if ( get_field( 'hours' ) ) {
 						echo '<article class="general-convention-hours">
-                            <h2>General Convention Schedule</h2>
-                            ' . get_field( 'hours' ) . '
-                        </article>';
+							<h2>General Convention Schedule</h2>
+							' . esc_attr( get_field( 'hours' ) ) . '
+						</article>';
 					}
 					?>
 				</div>
@@ -195,14 +195,14 @@ the_post();
 					if ( $special_tracks ) {
 						echo '<div class="special-track-container ghc-cpt container">';
 						foreach ( $special_tracks as $track ) {
-							echo '<article class="ghc-cpt item special-track ' . $track->slug . '">';
+							echo '<article class="ghc-cpt item special-track ' . esc_attr( $track->slug ) . '">';
 							if ( get_field( 'featured_image', $track ) ) {
-								echo '<a class="track-link" href="' . get_term_link( $track ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>';
+								echo '<a class="track-link" href="' . esc_url( get_term_link( $track ) ) . '">' . esc_attr( wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) ) . '</a>';
 							}
-							echo '<h3><a href="' . get_term_link( $track ) . '">' . $track->name . '</a></h3>';
-							if ( $track->description != '' ) {
-								echo wpautop( $track->description );
-								echo '<p><a href="' . get_term_link( $track ) . '" class="button">More Information&rarr;</a></p>';
+							echo '<h3><a href="' . esc_url( get_term_link( $track ) ) . '">' . esc_attr( $track->name ) . '</a></h3>';
+							if ( ! empty( $track->description ) ) {
+								echo esc_attr( wpautop( $track->description ) );
+								echo '<p><a href="' . esc_url( get_term_link( $track ) ) . '" class="button">More Information&rarr;</a></p>';
 							}
 							echo '</article>';
 						}
@@ -224,11 +224,11 @@ the_post();
 					<?php
 
 					if ( ! empty( $workshop['link'] ) ) {
-						echo '<p><a class="button" href="' . esc_attr( $workshop['link'] ) . '">Workshop Schedule</a> <span class="small">(' . ( $workshop['status'] == 'final' ? 'Final' : 'last updated ' . $workshop['date'] ) . ')</span></p>';
+						echo '<p><a class="button" href="' . esc_url( $workshop['link'] ) . '">Workshop Schedule</a> <span class="small">(' . ( 'final' === $workshop['status'] ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>';
 					}
 
 					if ( ! empty( $workshop_descriptions['url'] ) ) {
-						echo '<p><a class="button" href="' . esc_attr( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">Workshop Descriptions</a></p>';
+						echo '<p><a class="button" href="' . esc_url( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">Workshop Descriptions</a></p>';
 					}
 
 					echo do_shortcode( '[workshop_list convention="' . $convention_abbreviation . '" posts_per_page="30"]' );
@@ -252,7 +252,7 @@ the_post();
 						<li><strong>Saturday</strong>: 9:30 AM&ndash;5:30 PM</li>
 					</ul>
 					<p>Shopping-only tickets are also available at the door; get more information here:</p>
-					<p><a class="button" href="<?php echo get_home_url(); ?>/shopping-ticket-information/">Shopping-Only Tickets&rarr;</a></p>
+					<p><a class="button" href="<?php echo esc_url( get_home_url() ); ?>/shopping-ticket-information/">Shopping-Only Tickets&rarr;</a></p>
 					<?php echo do_shortcode( '[exhibitor_list style="list" convention="' . $convention_abbreviation . '"]' ); ?>
 				</article>
 			</div>

@@ -19,7 +19,7 @@ function ghc_2018_minified_css() {
 		WebFontConfig = {
 			custom: {
 				families: ['league_gothicregular', 'league_gothicitalic'],
-				urls: ['https://cdn.greathomeschoolconventions.com/fonts/league-gothic-normal.css']
+				urls: ['https://greathomeschoolconventions.com/fonts/league-gothic-normal.css']
 			},
 			google: {
 				families: ['Open Sans:400,400i,700,700i', 'Libre Franklin:300,300i,400,400i,600,600i,800,800i']

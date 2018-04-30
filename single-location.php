@@ -97,7 +97,7 @@ get_header(); ?>
                                 }
 
                                 if ( $icon['text'] ) {
-                                    echo esc_attr( $icon['text'] );
+                                    echo wp_kses( $icon['text'], wp_kses_allowed_html( 'post' ) );
                                 }
                             echo '</div>';
                         }
@@ -141,7 +141,7 @@ get_header(); ?>
                     if ( get_field( 'hours' ) ) {
                         echo '<article class="general-convention-hours">
                             <h2>General Convention Schedule</h2>
-                            ' . esc_attr( get_field( 'hours' ) ) . '
+                            ' . wp_kses( get_field( 'hours' ), wp_kses_allowed_html( 'post' ) ) . '
                         </article>';
                     }
                     ?>
@@ -194,11 +194,11 @@ get_header(); ?>
                         foreach ( $special_tracks as $track ) {
                             echo '<article class="ghc-cpt item special-track ' . esc_attr( $track->slug ) . '">';
                             if ( get_field( 'featured_image', $track ) ) {
-                                echo '<a class="track-link" href="' . esc_url( get_term_link( $track ) ) . '">' . esc_attr( wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) ) . '</a>';
+                                echo '<a class="track-link" href="' . esc_url( get_term_link( $track ) ) . '">' . wp_get_attachment_image( get_field( 'featured_image', $track ), 'medium' ) . '</a>'; // WPCS: XSS ok.
                             }
                             echo '<h3><a href="' . esc_url( get_term_link( $track ) ) . '">' . esc_attr( $track->name ) . '</a></h3>';
                             if ( ! empty( $track->description ) ) {
-                                echo esc_attr( wpautop( $track->description ) );
+                                echo wp_kses( wpautop( $track->description ), wp_kses_allowed_html( 'post' ) );
                                 echo '<p><a href="' . esc_url( get_term_link( $track ) ) . '" class="button">More Information&rarr;</a></p>';
                             }
                             echo '</article>';

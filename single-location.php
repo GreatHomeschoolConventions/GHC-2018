@@ -59,12 +59,12 @@ get_header(); ?>
 						$workshop = get_field( 'workshop_schedule' );
 						if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop['link'] ) ) {
 							echo '<div class="feature">
-                                <a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
-                                    <span class="dashicons dashicons-calendar-alt"></span>
-                                    <h3>Workshop Schedule</h3>
-                                </a>
-                                <p>Detailed workshop schedule <span class="small">(' . ( 'final' === $workshop['status'] ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>
-                            </div>';
+								<a class="icon" href="' . esc_attr( $workshop['link'] ) . '">
+									<span class="dashicons dashicons-calendar-alt"></span>
+									<h3>Workshop Schedule</h3>
+								</a>
+								<p>Detailed workshop schedule <span class="small">(' . ( 'final' === esc_attr( $workshop['status'] ) ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>
+							</div>';
 						}
 
 						/*
@@ -73,31 +73,31 @@ get_header(); ?>
 						$workshop_descriptions = get_field( 'workshop_descriptions' );
 						if ( strpos( $icon['title'], 'Workshop' ) !== false && ! empty( $workshop_descriptions['url'] ) ) {
 							echo '<div class="feature">
-                                <a class="icon" href="' . esc_url( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">
-                                    <span class="dashicons dashicons-welcome-learn-more"></span>
-                                    <h3>Workshop Descriptions</h3>
-                                </a>
-                                <p>Detailed workshop descriptions</p>
-                            </div>';
+								<a class="icon" href="' . esc_url( $workshop_descriptions['url'] ) . '" target="' . esc_attr( $workshop_descriptions['target'] ) . '">
+									<span class="dashicons dashicons-welcome-learn-more"></span>
+									<h3>Workshop Descriptions</h3>
+								</a>
+								<p>Detailed workshop descriptions</p>
+							</div>';
 						} else {
 							echo '<div class="feature">';
 								if ( $icon['url'] ) {
-								echo '<a class="icon" href="' . esc_url( $icon['url'] ) . '">';
+									echo '<a class="icon" href="' . esc_url( $icon['url'] ) . '">';
 								}
 								if ( $icon['icon_dashicon'] ) {
-								echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
+									echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
 								}
 
 								if ( $icon['title'] ) {
-								echo '<h3>' . esc_attr( $icon['title'] ) . '</h3>';
+									echo '<h3>' . esc_attr( $icon['title'] ) . '</h3>';
 								}
 
 								if ( $icon['url'] ) {
-								echo '</a>';
+									echo '</a>';
 								}
 
 								if ( $icon['text'] ) {
-								echo wp_kses( $icon['text'], wp_kses_allowed_html( 'post' ) );
+									echo wp_kses( $icon['text'], wp_kses_allowed_html( 'post' ) );
 								}
 							echo '</div>';
 						}
@@ -105,12 +105,12 @@ get_header(); ?>
 
 					if ( get_field( 'price_sheet' ) ) {
 						echo '<div class="feature">
-                            <a class="icon" href="' . esc_attr( get_field( 'price_sheet' ) ) . '">
-                                <span class="dashicons dashicons-tickets-alt"></span>
-                                <h3>Detailed Pricing</h3>
-                            </a>
-                            <p>Detailed price sheet</p>
-                        </div>';
+							<a class="icon" href="' . esc_attr( get_field( 'price_sheet' ) ) . '">
+								<span class="dashicons dashicons-tickets-alt"></span>
+								<h3>Detailed Pricing</h3>
+							</a>
+							<p>Detailed price sheet</p>
+						</div>';
 					}
 					?>
 				</div>
@@ -122,16 +122,16 @@ get_header(); ?>
 								the_content();
 
 								wp_link_pages(
-									 array(
-										 'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-										 'after'  => '</div>',
-									 )
-									);
+									array(
+										'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+										'after'  => '</div>',
+									)
+								);
 
 								if ( get_field( 'featured_video' ) ) {
-								echo '<article class="featured-video">
-                                        ' . wp_oembed_get( esc_url( get_field( 'featured_video' ) ) ) . '
-                                    </article>';
+									echo '<article class="featured-video">
+										' . wp_kses( wp_oembed_get( esc_url( get_field( 'featured_video' ) ) ), wp_kses_allowed_html( 'post' ) ) . '
+									</article>'; // WPCS: XSS ok.
 								}
 							?>
 						</div><!-- .entry-content -->
@@ -140,9 +140,9 @@ get_header(); ?>
 					<?php
 					if ( get_field( 'hours' ) ) {
 						echo '<article class="general-convention-hours">
-                            <h2>General Convention Schedule</h2>
-                            ' . wp_kses( get_field( 'hours' ), wp_kses_allowed_html( 'post' ) ) . '
-                        </article>';
+							<h2>General Convention Schedule</h2>
+							' . wp_kses( get_field( 'hours' ), wp_kses_allowed_html( 'post' ) ) . '
+						</article>';
 					}
 					?>
 				</div>
@@ -221,7 +221,7 @@ get_header(); ?>
 					<?php
 
 					if ( ! empty( $workshop['link'] ) ) {
-						echo '<p><a class="button" href="' . esc_url( $workshop['link'] ) . '">Workshop Schedule</a> <span class="small">(' . ( 'final' === $workshop['status'] ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>';
+						echo '<p><a class="button" href="' . esc_url( $workshop['link'] ) . '">Workshop Schedule</a> <span class="small">(' . ( 'final' === esc_attr( $workshop['status'] ) ? 'Final' : 'last updated ' . esc_attr( $workshop['date'] ) ) . ')</span></p>';
 					}
 
 					if ( ! empty( $workshop_descriptions['url'] ) ) {

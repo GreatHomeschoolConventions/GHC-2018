@@ -81,24 +81,24 @@ get_header(); ?>
 							</div>';
 						} else {
 							echo '<div class="feature">';
-								if ( $icon['url'] ) {
-									echo '<a class="icon" href="' . esc_url( $icon['url'] ) . '">';
-								}
-								if ( $icon['icon_dashicon'] ) {
-									echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
-								}
+							if ( $icon['url'] ) {
+								echo '<a class="icon" href="' . esc_url( $icon['url'] ) . '">';
+							}
+							if ( $icon['icon_dashicon'] ) {
+								echo '<span class="dashicons ' . esc_attr( $icon['icon_dashicon'] ) . '"></span>';
+							}
 
-								if ( $icon['title'] ) {
-									echo '<h3>' . esc_attr( $icon['title'] ) . '</h3>';
-								}
+							if ( $icon['title'] ) {
+								echo '<h3>' . esc_attr( $icon['title'] ) . '</h3>';
+							}
 
-								if ( $icon['url'] ) {
-									echo '</a>';
-								}
+							if ( $icon['url'] ) {
+								echo '</a>';
+							}
 
-								if ( $icon['text'] ) {
-									echo wp_kses( $icon['text'], wp_kses_allowed_html( 'post' ) );
-								}
+							if ( $icon['text'] ) {
+								echo wp_kses( $icon['text'], wp_kses_allowed_html( 'post' ) );
+							}
 							echo '</div>';
 						}
 					}

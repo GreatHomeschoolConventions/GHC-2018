@@ -2445,7 +2445,7 @@ body:not(.twentyseventeen-front-page) .entry-header {
 
 	.theme.bg {
 		&:nth-child(odd) {
-			* { color: white; }
+			*:not(input) { color: white; }
 		}
 		&:nth-child(even) { background-color: $theme-gray; }
 

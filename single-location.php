@@ -38,7 +38,10 @@ get_header(); ?>
 
 					<div id="dates" class="dates">
 						<h2>Dates</h2>
-						<p><?php echo esc_attr( ghc_format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ) ); ?></p>
+						<p><?php
+							$ghc = GHC_Base::get_main_instance();
+							echo esc_attr( $ghc->format_date_range( get_field( 'begin_date' ), get_field( 'end_date' ), 'Ymd' ) );
+						?></p>
 						<?php
 						if ( get_field( 'ics_file' ) ) {
 							echo '<p><a class="button" href="' . esc_url( get_field( 'ics_file' ) ) . '">Add to my calendar&rarr;</a></p>';

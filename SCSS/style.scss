@@ -5029,3 +5029,8 @@ body div#ui-datepicker-div[style] {
 		}
 	}
 }
+
+/* hide FL and NY from registration page */
+.registration-choice {
+	&.ny, &.fl { display: none; }
+}
